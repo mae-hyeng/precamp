@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper-header,
+.wrapper-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.title {
+  color: #55b2e4;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 8px;
+  padding-left: 5px;
+}
+
+.divideLine {
+  width: 100%;
+  border-top: 1px solid gray;
+}
+
+.bgm-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding: 20px;
+}
+
+.bgm {
+  width: 120px;
+  height: 158px;
+}
+
+.bgm-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgm-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0f465e;
+}
+
+.bgm-sing {
+  font-size: 10px;
+  font-weight: 700;
+  color: #999999;
+}
+
+/* table start */
+
+.albumTable {
+  border-spacing: 0px;
+  width: 100%;
+  padding-top: 8px;
+  font-size: 10px;
+}
+
+.albumTable th {
+  height: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: gray;
+  background-color: #eeeeee;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
+
+.albumTable td {
+  height: 20px;
+  font-size: 10px;
+  color: #0f465e;
+  border-bottom: 1px dashed gray;
+}
+
+.albumTable-checkbox,
+.album-table-checkbox {
+  width: 5%;
+  text-align: center;
+}
+
+.albumTable-number,
+.album-table-number {
+  width: 10%;
+  text-align: center;
+}
+
+.albumTable-song,
+.album-table-song {
+  width: 45%;
+  text-align: left;
+}
+
+.albumTable-artist,
+.album-table-artist {
+  width: 30%;
+  text-align: left;
+}
+
+.album-table-checkbox,
+.album-table-number {
+  text-align: center;
+}
+
+.albumTable-checkbox [type="checkbox"],
+.album-table-checkbox [type="checkbox"] {
+  vertical-align: middle;
+}
+
+/* table end */
