@@ -1,30 +1,17 @@
-function generateCombinations(digits) {
-  const results = new Set();
+function solution(genres, plays) {
+  let gp = genres.map((g, i) => [g, plays[i]]);
+  let maxs = {};
+  let sum = {};
+  genres.forEach((g, i) => {
+    sum[g] = (sum[g] || 0) + plays[i];
+    maxs[g] = (maxs[g] || 0) < plays[i] ? plays[i] : plays[i];
+  });
 
-  function backtrack(path, used) {
-    if (path.length > 0) {
-      results.add(path.join("")); // 현재 경로를 문자열로 저장
-    }
-
-    if (path.length === digits.length) return;
-
-    for (let i = 0; i < digits.length; i++) {
-      if (used[i]) continue; // 이미 사용한 숫자면 스킵
-
-      used[i] = true;
-      path.push(digits[i]);
-
-      backtrack(path, used);
-
-      path.pop();
-      used[i] = false;
-    }
-  }
-
-  backtrack([], Array(digits.length).fill(false));
-  return [...results];
+  let 순서 = Object.entries(sum)
+    .sort((a, b) => b[1] - a[1])
+    .map((s) => s[0]);
 }
 
-const digits = ["1", "2", "3"];
-const allCombinations = generateCombinations(digits);
-console.log(allCombinations.sort());
+console.log(solution([5, 1, 3, 7], [2, 2, 6, 8]));
+console.log(solution([2, 2, 2, 2], [1, 1, 1, 1]));
+console.log(solution([1, 3, 9, 9], [2, 2, 8, 10]));

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>GAME</title>
+    <link href="./styles/game.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper-header">
+        <div class="header-title">
+          <div class="title">GAME</div>
+          <div class="subtitle">TODAY CHOICE</div>
+        </div>
+        <div class="divideLine"></div>
+      </div>
+      <div class="game-container">
+        <img src="./images/word.png" />
+        <div class="game-title">끝말잇기</div>
+        <div class="game-subtitle">
+          제시어 : <span id="word">코드캠프</span>
+        </div>
+        <div class="word-text">
+          <input class="textbox" id="myword" placeholder="단어를 입력하세요" />
+          <button class="search">검색</button>
+        </div>
+        <div id="result" class="word-result">결과!</div>
+      </div>
+      <div class="game-container">
+        <img src="./images/lotto.png" />
+        <div class="game-title">LOTTO</div>
+        <div class="game-subtitle">버튼을 누르세요</div>
+        <div class="lotto-wrapper">
+          <div id="lotto-1">3</div>
+          <div id="lotto-2">5</div>
+          <div id="lotto-3">10</div>
+          <div id="lotto-4">24</div>
+          <div id="lotto-5">30</div>
+          <div id="lotto-6">34</div>
+        </div>
+        <button id="btn" class="lotto-btn">Button</button>
+      </div>
+    </div>
+  </body>
+</html>
