@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>final</title>
+    <script src="./final.js"></script>
+    <link href="./final.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="header-title">코드캠프 회원가입</div>
+      <div class="input-wrapper">
+        <input
+          id="email-veri"
+          type="email"
+          placeholder="이메일을 입력해 주세요."
+        />
+        <div id="error-email" class="error"></div>
+
+        <input id="name-veri" type="text" placeholder="이름을 입력해 주세요." />
+        <div id="error-name" class="error"></div>
+
+        <input
+          id="pw-veri"
+          type="password"
+          placeholder="비밀번호를 입력해 주세요."
+        />
+        <div id="error-pw" class="error"></div>
+
+        <input
+          id="pw-re-veri"
+          type="password"
+          placeholder="비밀번호를 다시 입력해 주세요."
+        />
+        <div id="error-pw-re" class="error"></div>
+      </div>
+      <div class="auth-wrapper">
+        <div class="auth-input-wrapper">
+          <input
+            oninput="focusA2()"
+            id="auth1"
+            type="text"
+            maxlength="3"
+          />-<input
+            oninput="focusA3()"
+            id="auth2"
+            type="text"
+            maxlength="4"
+          />-<input
+            oninput="delDisabled()"
+            id="auth3"
+            type="text"
+            maxlength="4"
+          />
+        </div>
+        <div class="auth-div">
+          <div id="tokenNum" class="lb">000000</div>
+          <div>
+            <button
+              onclick="createToken()"
+              id="push-auth"
+              class="push-btn lb bg"
+              disabled
+            >
+              인증번호 전송
+            </button>
+          </div>
+        </div>
+        <div class="auth-div">
+          <div id="timer" class="lb">3:00</div>
+          <div>
+            <button
+              onclick="verifyAuth()"
+              id="verify-auth"
+              class="auth-ok"
+              disabled
+            >
+              인증확인
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="area-wrapper">
+        <select id="areas" class="area-select">
+          <option value="0" selected disabled>지역을 선택하세요</option>
+          <option value="1">서울</option>
+          <option value="2">인천</option>
+          <option value="3">경기</option>
+        </select>
+        <div id="error-select" class="error"></div>
+        <div class="area-radio">
+          <input type="radio" name="gen" id="girl" />
+          <label for="girl">여성</label>
+          <input type="radio" name="gen" id="man" />
+          <label for="man"> 남성 </label>
+        </div>
+        <div id="error-gender" class="error"></div>
+      </div>
+      <div class="line"></div>
+      <button onclick="verification()" id="submit-btn" class="submit" disabled>
+        가입하기
+      </button>
+    </div>
+  </body>
+</html>

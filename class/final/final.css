@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  font-size: 10px;
+}
+
+.app {
+  width: 380px;
+  padding: 30px 50px;
+  border: 1px solid #aacdff;
+  border-radius: 16px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header-title {
+  font-size: 18px;
+  color: blue;
+  font-weight: 700px;
+}
+
+/* input-wrapper start */
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.input-wrapper input {
+  padding: 8px;
+  margin: 5px 0px;
+  font-size: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+/* input-wrapper end */
+
+/* auth-wrapper start */
+.auth-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-input-wrapper input {
+  width: 80px;
+  padding: 8px;
+  font-size: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+}
+
+.auth-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+}
+
+.push-btn {
+  width: 75px;
+  height: 20px;
+  background-color: white;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.auth-ok {
+  width: 75px;
+  height: 20px;
+  background-color: #0068ff;
+  color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* auth-wrapper end */
+
+/* area-wrapper start */
+.area-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.area-select {
+  width: 100%;
+  color: gray;
+  border: 1px solid gray;
+  padding: 8px;
+  font-size: 10px;
+  border-radius: 5px;
+}
+
+.area-radio {
+  display: flex;
+  justify-content: center;
+  align-items: self-end;
+}
+
+.area-radio input {
+  margin-left: 10px;
+}
+/* area-wrapper end */
+
+.line {
+  width: 100%;
+  border-top: 1px solid gray;
+}
+
+.submit {
+  padding: 10px;
+  background-color: white;
+  border: 1px solid #0068ff;
+  border-radius: 5px;
+  color: #0068ff;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+/* 색상 */
+.lb {
+  color: #0068ff;
+}
+
+/* border */
+.bg {
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+/* button */
+button:disabled {
+  border: 1px solid gray;
+  color: gray;
+  background-color: white;
+  cursor: unset;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
