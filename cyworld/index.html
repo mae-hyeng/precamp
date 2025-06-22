@@ -7,6 +7,7 @@
       src="https://kit.fontawesome.com/7083739b24.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./index.js"></script>
   </head>
   <body>
     <script src="../class/03-javascript/test.js"></script>
@@ -50,7 +51,22 @@
               <div class="right-header-setting">사생활보호설정</div>
             </div>
             <div class="wrapper-right-body">
-              <iframe src="./jukebox.html"></iframe>
+              <iframe id="contentFrame" src="./home.html"></iframe>
+            </div>
+          </div>
+          <div class="navigation">
+            <div onclick="menuHome()" class="navigation-item" id="menuHome">
+              홈
+            </div>
+            <div
+              onclick="menuJukebox()"
+              class="navigation-item"
+              id="menuJukebox"
+            >
+              주크박스
+            </div>
+            <div onclick="menuGame()" class="navigation-item" id="menuGame">
+              게임
             </div>
           </div>
         </div>
