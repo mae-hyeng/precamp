@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>flexbox wrap</title>
+    <style>
+      .parent1 {
+        display: flex;
+        flex-direction: row;
+        width: 500px;
+        background-color: skyblue;
+        gap: 10px;
+      }
+
+      .parent2 {
+        display: flex;
+        flex-direction: row;
+        width: 500px;
+        background-color: skyblue;
+        gap: 10px;
+        flex-wrap: wrap;
+
+        justify-content: space-between;
+      }
+
+      .child1 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        border: 5px solid red;
+      }
+
+      .child2 {
+        width: 100px;
+        height: 100px;
+        background-color: yellow;
+        border: 5px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 자식 요소가 많을 때 찌그러지는 상황 -->
+    <div class="parent1">
+      <div class="child1"></div>
+      <div class="child1"></div>
+      <div class="child1"></div>
+      <div class="child1"></div>
+      <div class="child1"></div>
+      <div class="child1"></div>
+    </div>
+
+    <br />
+    <br />
+
+    <!-- 자식 요소가 많을 때 아래로 내려주는 상황 -->
+    <div class="parent2">
+      <div class="child2"></div>
+      <div class="child2"></div>
+      <div class="child2"></div>
+      <div class="child2"></div>
+      <div class="child2"></div>
+      <div class="child2"></div>
+    </div>
+  </body>
+</html>

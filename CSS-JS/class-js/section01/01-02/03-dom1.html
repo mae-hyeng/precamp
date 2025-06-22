@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>DOM 조작 실습</title>
+    <script>
+      const findFruit = () => {
+        const fruit = document.getElementById("fruit").innerText;
+        alert(`내가 좋아하는 과일은 : ${fruit}`);
+      };
+
+      const submitProfile = () => {
+        const text = document.getElementById("name").value;
+        document.getElementById("who").innerText = `${text}님 환영합니다!`;
+      };
+    </script>
+  </head>
+  <body>
+    <div id="fruit">사과</div>
+    <button onclick="findFruit()">과일찾기</button>
+
+    <br /><br />
+
+    오늘의 인삿말 :
+    <div id="who"></div>
+    <input id="name" type="text" />
+    <button onclick="submitProfile()">프로필 등록하기</button>
+  </body>
+</html>

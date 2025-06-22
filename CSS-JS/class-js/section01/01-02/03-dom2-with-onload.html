@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>DOM 로드 실습</title>
+    <script>
+      //   1. 7-8 라인은 HTML을 아직 불러오지 못해서 name이라는 id를 가진 태그를 찾지 못해 기능이 동작하지 않음
+      //   const myName = prompt("이름을 입력해주세요!");
+      //   document.getElementById("name").innerText = myName;
+
+      // 2. HTML 전부 다 로드되고 나서 실행되게 window.onload로 로드 됐을 때 실행되게 변경
+      window.onload = () => {
+        const myName = prompt("이름을 입력해주세요!");
+        document.getElementById("name").innerText = myName;
+      };
+    </script>
+  </head>
+  <body>
+    <b id="name"></b>의 다이어리에 오신 것을 환영합니다!
+  </body>
+</html>

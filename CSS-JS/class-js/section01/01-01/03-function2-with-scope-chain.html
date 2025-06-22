@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>함수와 스코프</title>
+    <script>
+      function outerFunction() {
+        const banana = 10;
+        console.log(banana);
+
+        function innerFunction() {
+          //   const banana = 50;
+          console.log(banana); // 스코프체인에 의해 innerFuntion()에 banana가 없어도 에러나지 않고 10이 찍힘
+        }
+
+        innerFunction();
+
+        console.log(banana);
+      }
+
+      outerFunction();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>호이스팅 실습</title>
+    <script>
+      // 1. 밑에서 만든 함수 위에서 실행하기 -> 호이스팅
+      myFunction();
+
+      function myFunction() {
+        console.log("함수 실행");
+      }
+
+      // 2. 밑에서 만든 변수 위에서 실행하기
+      console.log(myVar);
+
+      var myVar = "철수";
+
+      console.log(myVar);
+    </script>
+  </head>
+  <body></body>
+</html>

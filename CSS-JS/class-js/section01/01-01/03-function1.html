@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>함수와 스코프 실습</title>
+    <script>
+      // 1. 함수 생성 및 실행
+      function plus() {
+        const result = 1 + 2;
+        return result;
+      }
+
+      const result = plus();
+      console.log(result);
+
+      // 2. 함수에 값 전달
+      function plus2(n1, n2, n3) {
+        const result = n1 + n2 + n3;
+        return result;
+      }
+
+      const result2 = plus2(100, 200, 300);
+      console.log(result2);
+    </script>
+  </head>
+  <body></body>
+</html>
