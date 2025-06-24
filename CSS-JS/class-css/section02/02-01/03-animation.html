@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>애니메이션 실습</title>
+        <style>
+            .paper {
+                width: 100px;
+                height: 150px;
+                background-color: green;
+            }
+
+            .paper:hover {
+                animation-name: myAni;
+                animation-duration: 0.5s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes myAni {
+                from {
+                    transform: rotateY(20deg);
+                    background-color: red;
+                }
+
+                50% {
+                    transform: rotateY(100deg);
+                    background-color: orange;
+                }
+
+                to {
+                    transform: rotateY(180deg);
+                    background-color: yellow;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="paper"></div>
+    </body>
+</html>

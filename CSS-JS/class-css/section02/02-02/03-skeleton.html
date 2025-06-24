@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>스캘레톤 실습</title>
+        <style>
+            .pa {
+                width: 500px;
+                height: 500px;
+                background-color: lightgray;
+                border-radius: 30px;
+            }
+
+            .ch {
+                width: 100px;
+                height: 1000px;
+                background-color: white;
+                filter: blur(70px);
+
+                animation-name: myAni;
+                animation-duration: 1s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes myAni {
+                from {
+                    transform: translate(-400px, -400px) rotateZ(30deg);
+                }
+                to {
+                    transform: translate(700px, 200px) rotateZ(30deg);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pa">
+            <div class="ch"></div>
+        </div>
+    </body>
+</html>
