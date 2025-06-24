@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>윈도우 스크롤 리스너 실습</title>
+     <script>
+          window.addEventListener("scroll", () => {
+               const scrollTop = window.scrollY;
+               console.log(`스크롤이 ${scrollTop}만큼 내려감`);
+
+               if (scrollTop > 0) document.getElementById("img1").style = "border: 20px solid red";
+               else document.getElementById("img1").style = "border: none"
+          })
+     </script>
+</head>
+<body>
+     <img id="img1" src="./00-image.jpg" width="1000px" />
+</body>
+</html>

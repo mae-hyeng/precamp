@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>윈도우 스크롤 실습</title>
+     <script>
+          const scrollStart = () => {
+               // window.scrollTo({top : 0}); // 스크롤 맨 위로 올리기
+
+               // window.scrollBy({ top : -500 }); // 스크롤 지금 위치에서 500 만큼 올리기
+
+               window.scrollTo({top:0, behavior: "smooth"}); // 스크롤 부드럽게 올리기
+               console.log("실행")
+          }
+     </script>
+</head>
+<body>
+     <img src="./00-image.jpg" width="2000px" />
+     <button onclick="scrollStart()">스크롤 올리기</button>
+</body>
+</html>
