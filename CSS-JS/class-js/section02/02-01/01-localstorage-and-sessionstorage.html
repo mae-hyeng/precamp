@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>로컬스토리지와 세션스토리지 실습</title>
+        <script>
+            // 1. 변수에 저장하기 :
+            // let apples = 0;
+            // const apple20 = () => {
+            //     apples = 20;
+            // };
+
+            // const getApple = () => {
+            //     alert(`사과바구니에 사과가 ${apples}개 들어있어요!`);
+            // };
+
+            // 2. 세션스토리지에 저장하기 :
+            // const apple20 = () => {
+            //     sessionStorage.setItem("apples", 20);
+            // };
+
+            // const getApple = () => {
+            //     const apples = sessionStorage.getItem("apples");
+            //     alert(`사과바구니에 사과가 ${apples}개 들어있어요!`);
+            // };
+
+            // 3. 로컬스토리지에 저장하기 :
+            const apple20 = () => {
+                localStorage.setItem("apples", 20);
+            };
+
+            const getApple = () => {
+                const apples = localStorage.getItem("apples");
+                alert(`사과바구니에 사과가 ${apples}개 들어있어요!`);
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="apple20()">사과 20개 담기</button>
+        <button onclick="getApple()">사과 몇개인지 불러오기</button>
+    </body>
+</html>
+
+<!--
+변수
+- 껐다키면 지워짐
+- 새로고침 하면 지워짐
+
+세션 스토리지
+- 새로고침 하더라도 지워지지 않음
+
+로컬 스토리지
+- 브라우저 껐다 켜도 지워지지 않음
+- 새로고침 하더라도 지워지지 않음
+
+쿠키
+- 만료일까지 지워지지 않음
+-->
