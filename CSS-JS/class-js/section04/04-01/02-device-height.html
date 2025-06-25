@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>디바이스 높이 감지 실습</title>
+     <style>
+          * {
+               margin: 0;
+          }
+
+          .btn {
+               position: fixed;
+               left: 90%;
+               bottom: 10px;
+          }
+
+          .footer {
+               height: 100px;
+               background-color: lightgray;
+          }
+     </style>
+     <script>
+          window.addEventListener("scroll", () => {
+               // const nowScroll = window.scrollY // 기본 스크롤 높이
+               const nowScroll = document.documentElement.scrollTop // 기본 HTML 스크롤 높이(= 기본 스크롤 높이)
+               console.log(nowScroll)
+
+               if (nowScroll >= 682) {
+                    document.getElementById("floatingBtn").style = `
+                         position: relative;
+                         bottom: 40px;
+                         left: 90%;
+                    `
+               } else {
+                    document.getElementById("floatingBtn").style = `
+                    position: fixed;
+                    bottom: 10px;
+                    left: 90%;
+               `
+               }
+          })
+     </script>
+</head>
+<body>
+     <img src="./00-image.jpg" width="100%">
+     <button id="floatingBtn" class="btn"> ^ </button>
+     <div class="footer">footer</div>
+</body>
+</html>
