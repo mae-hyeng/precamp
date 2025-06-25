@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>Document</title>
+     <style>
+          .parent {
+               display: flex;
+               flex-wrap: wrap;
+               max-width: 1100px;
+               background-color: skyblue;
+               padding: 50px;
+          }
+
+          .child {
+               width: 250px;
+               height: 250px;
+          }
+
+          @media (max-width:650px) {
+               .parent {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+               }
+
+               .child {
+                    width: 100%;
+               }
+          }
+     </style>
+</head>
+<body>
+     <div class="parent">
+          <img class="child" src="../04-01/00-image.jpg">
+          <img class="child" src="../04-01/00-image.jpg">
+          <img class="child" src="../04-01/00-image.jpg">
+          <img class="child" src="../04-01/00-image.jpg">
+          <img class="child" src="../04-01/00-image.jpg">
+          <img class="child" src="../04-01/00-image.jpg">
+          <img class="child" src="../04-01/00-image.jpg">
+          <img class="child" src="../04-01/00-image.jpg">
+     </div>
+</body>
+</html>
