@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>modal 실습</title>
+     <style>
+          .modalBg {
+               display: none;
+
+               position: absolute;
+               top: 0;
+               left: 0;
+
+               width: 100vw;
+               height: 100vh;
+               background-color: lightgray;
+
+               opacity: 90%;
+          }
+     </style>
+     <script>
+          const modalOpen = () => {
+               document.getElementById("modal").style = "display: block";
+          }
+     </script>
+</head>
+<body>
+     <button onclick="modalOpen()">모달열기</button>
+     <!-- modal -->
+     <div id="modal" class="modalBg"></div>
+</body>
+</html>

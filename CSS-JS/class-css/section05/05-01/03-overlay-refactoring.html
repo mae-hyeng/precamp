@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>겹치기 리팩토링 실습</title>
+     <style>
+          .parent {
+               position: relative; /* 부모 쌓임맥락을 형성하지 않는다면, 삭제버튼의 absolute는 html (0,0)을 부모로 생각하여 달라붙음 */
+               margin: 100px;
+          }
+
+          .image {
+               width: 200px;
+               height: 200px;
+               background-color: skyblue;
+          }
+
+          .xBox {
+               position: absolute;
+               top: 0;
+               left: 190px;
+
+               /* 겹칠 때, absolut(아래 애들 재배치하기) / relative(아래 애들 그대로두기) */
+               /* position: relative;
+               top: -200px;
+               left: 190px; */
+          }
+
+          .content {
+               width: 200px;
+               height: 100px;
+               background-color: orange;
+          }
+     </style>
+</head>
+<body>
+     <div class="parent">
+          <div class="image"></div>
+          <button class="xBox">X</button>
+          <div class="content">
+               이 이미지는 강아지 이미지입니다.
+          </div>
+     </div>
+</body>
+</html>
