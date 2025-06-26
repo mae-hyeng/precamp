@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>페이지이동효과 실습</title>
+        <style>
+            .box {
+                background-color: yellow;
+                width: 200px;
+                height: 200px;
+                margin: 10px;
+            }
+
+            @keyframes nextPage {
+                from {
+                    transform: translate(100%);
+                }
+
+                to {
+                    transform: translate(0%);
+                }
+            }
+
+            @keyframes prevPage {
+                from {
+                    transform: translate(0%);
+                }
+
+                to {
+                    transform: translate(-100%);
+                }
+            }
+
+            @view-transition {
+                navigation: auto;
+            }
+
+            ::view-transition-old(root) {
+                animation-name: prevPage;
+                animation-duration: 3s;
+            }
+
+            ::view-transition-new(root) {
+                animation-name: nextPage;
+                animation-duration: 1.5s;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box"></div>
+        <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+        <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+        <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+        <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+
+        <div class="box"></div>
+        <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+        <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+        <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+        <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+    </body>
+</html>

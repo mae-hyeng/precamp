@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>페이지이동효과 실습</title>
+        <style>
+            .box {
+                background-color: skyblue;
+                width: 1000px;
+                height: 200px;
+                margin: 10px;
+            }
+
+            /* 이전페이지 애니메이션을 안하더라도, 애니메이션에 사용되는 페이지는 @view-transition을 모두 작성해야 된다 */
+            @view-transition {
+                navigation: auto;
+            }
+
+            @keyframes prevPage {
+                from {
+                    transform: translate(0%);
+                }
+
+                to {
+                    transform: translate(100%);
+                }
+            }
+
+            ::view-transition-old(root) {
+                animation-name: prevPage;
+                animation-duration: 0.4s;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="./03-view-transition2-detail.html">페이지 이동하기</a>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </body>
+</html>

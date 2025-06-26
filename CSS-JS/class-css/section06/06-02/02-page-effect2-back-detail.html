@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>페이지이동효과(뒤로가기) 실습</title>
+        <style>
+            .box {
+                background-color: yellow;
+                width: 200px;
+                height: 200px;
+                margin: 10px;
+            }
+
+            .page {
+                animation-name: nextPage;
+                animation-duration: 0.4s;
+            }
+
+            @keyframes nextPage {
+                from {
+                    transform: translate(100%);
+                }
+
+                to {
+                    transform: translate(0%);
+                }
+            }
+
+            @keyframes backPage {
+                from {
+                    transform: translate(0%);
+                }
+
+                to {
+                    transform: translate(100%);
+                }
+            }
+        </style>
+
+        <script>
+            const pageOut = () => {
+                document.getElementById("page").style = "animation-name: backPage";
+                window.addEventListener("animationend", () => {
+                    history.back(); // 단지 브라우저의 뒤로가기 버튼을 누른 효과를 낼 때
+                    // location.href = "02-page-effect1-back.html"; // 특정 페이지로 지정하여 가고 싶을 때
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <div id="page" class="page">
+            <button onclick="pageOut()">나가기</button>
+            <div class="box"></div>
+            <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+            <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+            <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+            <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+
+            <div class="box"></div>
+            <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+            <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+            <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+            <p>안녕하세요. 철수입니다. 상세페이지입니다. 반갑습니다</p>
+        </div>
+    </body>
+</html>
