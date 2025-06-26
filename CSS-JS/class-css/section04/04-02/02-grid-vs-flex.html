@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>그리드, 플렉스 비교 실습</title>
+     <style>
+          .flexBox {
+               display: flex;
+               flex-wrap: wrap;
+               /* justify-content: center; */
+               width: 400px;
+               gap: 10px;
+               background-color: lightgray;
+          }
+
+          .gridBox {
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr;
+               place-items: center;
+               width: 400px;
+               background-color: lightgray;
+          }
+
+          .btn {
+               width: 100px;
+               background-color: skyblue;
+          }
+     </style>
+</head>
+<body>
+     <div class="flexBox">
+          <div class="btn">신용카드</div>
+          <div class="btn">계좌이체</div>
+          <div class="btn">핸드폰결제</div>
+          <div class="btn">무통장입금</div>
+          <div class="btn">포인트결제</div>
+     </div>
+     <br><br>
+     <div class="gridBox">
+          <div class="btn">신용카드</div>
+          <div class="btn">계좌이체</div>
+          <div class="btn">핸드폰결제</div>
+          <div class="btn">무통장입금</div>
+          <div class="btn">포인트결제</div>
+     </div>
+</body>
+</html>

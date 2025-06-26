@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>세로 스크롤 실습</title>
+     <style>
+          .header {
+               width: 100%;
+               height: 50px;
+               position: sticky;
+               /* background-color: yellow; 색이 없어져야 비치는 모습이 보임*/
+               /* filter: blur(10px); 자기 자신이 뿌옇게 변하는거 */
+               backdrop-filter: blur(10px); /* 배경이 뿌옇게 변하는거 */
+               top: 0;
+          }
+
+          .parent {
+               width: 200px;
+               height: 300px;
+               border: 1px solid blue;
+
+               /* 넘치는 영역 스크롤처리 */
+               overflow: scroll;
+
+               /* 넘치는 영역 안보이게 처리 */
+               /* overflow: hidden; */
+          }
+
+          .child {
+               width: 150px;
+               height: 180px;
+               background-color: skyblue;
+               margin: 10px;
+          }
+     </style>
+</head>
+<body>
+     <div class="parent">
+          <div class="header">position sticky</div>
+          <div class="child"></div>
+          <div class="child"></div>
+          <div class="child"></div>
+          <div class="child"></div>
+          <div class="child"></div>
+          <div class="child"></div>
+     </div>
+</body>
+</html>

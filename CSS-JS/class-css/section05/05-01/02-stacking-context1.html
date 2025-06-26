@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>z-index 실습</title>
+     <style>
+          .box1 {
+               width: 100px;
+               height: 100px;
+               background-color: red;
+
+               /* 이것만 있다고 위로 올라가는게 아님 */
+               z-index: 4;
+
+               /* 포지션을 주어 쌓임맥락에 포함시키면 그제서야 z-index 먹힘 */
+               position: absolute;
+          }
+
+          .box2 {
+               width: 100px;
+               height: 100px;
+               background-color: yellow;
+
+               position: absolute;
+               top: 25px;
+               left: 25px;
+
+               z-index: 3;
+          }
+
+          .box3 {
+               width: 100px;
+               height: 100px;
+               background-color: blue;
+
+               position: absolute;
+               top: 50px;
+               left: 50px;
+
+               z-index: 2;
+          }
+     </style>
+</head>
+<body>
+     <div class="box1"></div>
+     <div class="box2"></div>
+     <div class="box3"></div>
+</body>
+</html>

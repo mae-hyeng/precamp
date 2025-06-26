@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+     <title>핀치줌 실습</title>
+     <script>
+          const zoom = () => {
+               document.body.style = `background-color: black`;
+               document.getElementById("image").style = `width : 100%`;
+               document.getElementsByName("viewport")[0].content = `
+                    width=device-width,
+                    initial-scale=1.0,
+                    minimum-scale=1.0,
+                    maximum-scale=3.0,
+                    user-scalable=yes
+               `
+          }
+     </script>
+</head>
+<body>
+     <img id="image" src="./00-image.jpg" width="200px" onclick="zoom()"/>
+</body>
+</html>

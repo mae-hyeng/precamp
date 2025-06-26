@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>rem 실습</title>
+     <style>
+          html {
+               font-size: 16px; /* 기본 사이즈가 16px 이기 때문에 굳이 작성 안해도 됨 */
+
+               /* font-size: 62.5%; rem 계산하기 쉽게 10px 단위로 변환한 수치가 62.5*/
+          }
+
+          .box {
+               width: 10rem; /* root의 기본 사이즈가 16px 이기 때문에 결국 160px임 */
+               height: 10rem;
+               background-color: skyblue;
+               margin: 20px;
+          }
+
+          @media (max-width: 767px) {
+               html {
+                    font-size: 8px;
+               }
+          }
+     </style>
+</head>
+<body>
+     <div class="box">box</div>
+     <div class="box">box</div>
+     <div class="box">box</div>
+</body>
+</html>

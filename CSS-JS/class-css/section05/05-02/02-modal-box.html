@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>modal 실습</title>
+     <style>
+          .modalGroup {
+               display: none;
+               position: absolute;
+               top: 0;
+               left: 0;
+          }
+
+          .modalBg {
+               width: 100vw;
+               height: 100vh;
+               background-color: lightgray;
+               opacity: 90%;
+          }
+
+          .modal {
+               position: absolute;
+               top: calc(50% - 500px/2);
+               left: calc(50% - 400px/2);
+               width: 400px;
+               height: 500px;
+
+               background-color: skyblue;
+          }
+     </style>
+     <script>
+          const modalOpen = () => {
+               document.getElementById("modalGroup").style = "display: block";
+          }
+
+          const modalClose = () => {
+               document.getElementById("modalGroup").style = "display: none";
+          }
+     </script>
+</head>
+<body>
+     <button onclick="modalOpen()">모달열기</button>
+
+     <!-- modal -->
+     <div id="modalGroup" class="modalGroup">
+          <div class="modalBg" onclick="modalClose()"></div>
+          <div class="modal"></div>
+     </div>
+</body>
+</html>

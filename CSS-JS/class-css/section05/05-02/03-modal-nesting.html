@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>modal 실습</title>
+     <style>
+          .modalGroup {
+               display: none;
+               position: absolute;
+               top: 0;
+               left: 0;
+          }
+
+          .modalBg {
+               width: 100vw;
+               height: 100vh;
+               background-color: lightgray;
+               opacity: 90%;
+          }
+
+          .modal1 {
+               position: absolute;
+               top: calc(50% - 500px/2);
+               left: calc(50% - 400px/2);
+               width: 400px;
+               height: 500px;
+
+               background-color: skyblue;
+          }
+
+          .modal2 {
+               position: absolute;
+               top: calc(50% - 150px / 2);
+               left: calc(50% - 600px / 2);
+               width: 600px;
+               height: 150px;
+
+               background-color: yellow;
+          }
+     </style>
+     <script>
+          const modalOpen = (modal) => {
+               document.getElementById(modal).style = "display: block";
+          }
+
+          const modalClose = (modal) => {
+               document.getElementById(modal).style = "display: none";
+          }
+     </script>
+</head>
+<body>
+     <button onclick="modalOpen('modalGroup1')">모달열기</button>
+
+     <!-- 등록 modal -->
+     <div id="modalGroup1" class="modalGroup">
+          <div class="modalBg" onclick="modalClose('modalGroup1')"></div>
+          <div class="modal1">
+               <div>
+                    제목: <input />
+               </div>
+               <div>
+                    내용 : <textarea></textarea>
+               </div>
+               <div>
+                    <button onclick="modalOpen('modalGroup2')">등록하기</button>
+               </div>
+          </div>
+     </div>
+
+     <!-- 등록완료 modal -->
+     <div id="modalGroup2" class="modalGroup">
+          <div class="modalBg" onclick="modalClose('modalGroup2')"></div>
+          <div class="modal2">
+               <p>등록이 완료되었습니다</p>
+          </div>
+     </div>
+</body>
+</html>

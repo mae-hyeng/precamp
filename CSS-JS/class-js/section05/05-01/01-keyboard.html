@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>키보드 감지 실습</title>
+     <style>
+          .dog {
+               width: 100px;
+               height: 100px;
+
+               position: absolute;
+               top: 300px;
+               left: 400px;
+          }
+     </style>
+     <script>
+          let boost = 1.0;
+          window.addEventListener("keydown", (e) => {
+               const dog = document.getElementById("dog")
+               const dogStyle = getComputedStyle(dog);
+               let dogX = Number(dogStyle.left.replace("px", ""));
+               let dogY = Number(dogStyle.top.replace("px", ""));
+               switch (e.key) {
+                    // 강아지 위로 -20 옮기기
+                    case "ArrowUp": 
+                         document.getElementById("dog").style = `top: ${(dogY - 20) / boost}px; left: ${dogX}px`
+                         break;
+
+                    // 강아지 아래로 +20 옮기기
+                    case "ArrowDown":
+                         document.getElementById("dog").style = `top: ${(dogY + 20) * boost}px; left: ${dogX}px`
+                         break;
+                    
+                    // 강아지 왼쪽으로 -20 옮기기
+                    case "ArrowLeft":
+                         document.getElementById("dog").style = `top: ${dogY}px; left: ${(dogX - 20) / boost}px`
+                         break;
+                    
+                    // 강아지 오른쪽으로 +20 옮기기
+                    case "ArrowRight":
+                         document.getElementById("dog").style = `top: ${dogY}px; left: ${(dogX + 20) * boost}px`
+                         break;
+                    
+                    // 강아지 속도 증가
+                    case " ":
+                         boost += 0.1;
+                         break;
+               }
+          })
+     </script>
+</head>
+<body>
+     <img id="dog" class="dog" src="./00-image.jpg" />
+</body>
+</html>

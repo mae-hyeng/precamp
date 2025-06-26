@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>z-index 실습</title>
+     <style>
+          .boxParent {
+               width: 1000px;
+               height: 1000px;
+               background-color: lightgray;
+
+               margin: 100px;
+               padding: 100px;
+
+               /* 쌓임맥락으로 인해서 boxParent가 부모가 되면서 boxParent 위에서 top, left를 계산하게 되면서 boxParent의 left, top에 위치함 */
+               /* 부모의 재정의 */
+               /* 부모(컨테이닝 블록)는 자식을 감싸는 태그 */
+               /* 단, 쌓임맥락을 형성한 태그들은 쌓임맥락 안에서 새롭게 부모(컨테이닝 블록)와 자식 재정의 */
+               position: absolute;
+          }
+
+          .boxGroup {
+               width: 500px;
+               height: 500px;
+               background-color: skyblue;
+          }
+
+          .box1 {
+               width: 100px;
+               height: 100px;
+               background-color: red;
+
+               /* 이것만 있다고 위로 올라가는게 아님 */
+               z-index: 4;
+
+               /* 포지션을 주어 쌓임맥락에 포함시키면 그제서야 z-index 먹힘 */
+               position: absolute;
+               top: 0;
+               left: 0;
+          }
+
+          .box2 {
+               width: 100px;
+               height: 100px;
+               background-color: yellow;
+
+               position: absolute;
+               top: 25px;
+               left: 25px;
+
+               z-index: 3;
+          }
+
+          .box3 {
+               width: 100px;
+               height: 100px;
+               background-color: blue;
+
+               position: absolute;
+               top: 50px;
+               left: 50px;
+
+               z-index: 2;
+          }
+     </style>
+</head>
+<body>
+     <div class="boxParent">
+          <div class="boxGroup">
+               <div class="box1"></div>
+               <div class="box2"></div>
+               <div class="box3"></div>
+          </div>
+     </div>
+</body>
+</html>

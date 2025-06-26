@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>이벤트 버블링 전파 중단 실습</title>
+     <style>
+          .parent {
+               width: 100px;
+               height: 100px;
+               background-color: skyblue;
+               cursor: pointer;
+          }
+     </style>
+     <script>
+          const enl = () => {
+               document.getElementById("imgDiv").style = "width: 100vw; height: 100vh;"
+          }
+
+          const like = (e) => {
+               // e.preventDefault(); // <a /> 태그처럼 기본 기능들을 금지 => 지금처럼 onclick 으로 전파되는 경우 소용 없음
+               e.stopPropagation(); // 부모태그로 클릭 이벤트 전파되는 것을 중단
+
+               alert("좋아요가 1 증가 했습니다.")
+          }
+     </script>
+</head>
+<body>
+     <div id="imgDiv" class="parent" onclick="enl()">
+          <button onclick="like(event)">좋아요</button>
+     </div>
+     <p>사진을 클릭하며 전체화면으로 볼 수 있어요</p>
+</body>
+</html>

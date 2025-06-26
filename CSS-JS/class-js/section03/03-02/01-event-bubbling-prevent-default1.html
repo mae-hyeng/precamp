@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>이벤트버블링 기본기능 막기 실습</title>
+     <style>
+          .box {
+               width: 100px;
+               height: 100px;
+               background-color: skyblue;
+          }
+     </style>
+
+     <script>
+          const del = (e, number) => {
+               e.preventDefault(); // 이게 없으면 부모 태그인 <a>의 기능이 함께 실행되기 때문에 막아줌
+               alert(`${number}사진이 삭제되었습니다.`)
+          }
+
+          const boxClick = () => {
+               alert("div 클릭 영역")
+          }
+     </script>
+</head>
+<body>
+     <a href="./01-event-bubbling-prevent-default2-detail.html">
+          <div onclick="boxClick()" class="box">
+               <button onclick="del(event, 1)">1번 사진 삭제</button>
+          </div>
+     </a>
+     <a href="./01-event-bubbling-prevent-default2-detail.html">
+          <div onclick="boxClick()" class="box">
+               <button onclick="del(event, 2)">2번 사진 삭제</button>
+          </div>
+     </a>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+     <title>디바이스 높이 감지 실습</title>
+     <style>
+          * {
+               margin: 0;
+          }
+
+          .btn {
+               position: fixed;
+               left: 90%;
+               bottom: 10px;
+          }
+
+          .footer {
+               height: 100px;
+               background-color: lightgray;
+          }
+     </style>
+     <script>
+          window.addEventListener("scroll", () => {
+               const 현재보이는화면위_푸터위까지길이 = document.getElementById("footer").getBoundingClientRect().top
+               console.log(현재보이는화면위_푸터위까지길이);
+
+               const 현재보이는화면높이 = window.innerHeight // window.outerHeight => 메뉴, 주소창 등 포함한 높이
+               console.log(현재보이는화면높이);
+
+               if (현재보이는화면높이 >= 현재보이는화면위_푸터위까지길이) {
+                    document.getElementById("floatingBtn").style = `
+                         position: relative;
+                         bottom: 40px;
+                         left: 90%;
+                    `
+               } else {
+                    document.getElementById("floatingBtn").style = `
+                    position: fixed;
+                    bottom: 10px;
+                    left: 90%;
+               `
+               }
+          })
+     </script>
+</head>
+<body>
+     <img src="./00-image.jpg" width="100%">
+     <button id="floatingBtn" class="btn"> ^ </button>
+     <div id="footer" class="footer">footer</div>
+</body>
+</html>
