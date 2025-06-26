@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>다크모드 실습</title>
+        <style>
+            .dark {
+                color: white;
+                background-color: black;
+            }
+        </style>
+        <script>
+            const darkMode = () => {
+                document.body.classList.toggle("dark");
+            };
+        </script>
+    </head>
+    <body>
+        <input id="check" type="checkbox" onclick="darkMode()" />
+        <label for="check"> 다크모드 </label>
+        <br /><br />
+        이메일 : <input /><br />
+        비밀번호 : <input type="password" /><br />
+        <button>회원가입</button>
+    </body>
+</html>

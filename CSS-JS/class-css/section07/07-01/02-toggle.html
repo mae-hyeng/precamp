@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Document</title>
+        <style>
+            .checkbox {
+                appearance: none;
+                width: 40px;
+                height: 24px;
+                background-color: lightgray;
+                border-radius: 20px;
+                padding: 2px;
+            }
+
+            .checkbox::after {
+                display: block;
+                content: "";
+                width: 20px;
+                height: 20px;
+                background-color: white;
+                border-radius: 50%;
+                transition: transform 0.3s;
+            }
+
+            .checkbox:checked {
+                background-color: greenyellow;
+            }
+
+            .checkbox:checked::after {
+                transform: translate(calc(100% - 4px));
+                /* 좌우 2px씩 제외하고 맨 오른쪽으로 이동. padding으로 2px씩 줬기 때문 */
+            }
+        </style>
+        <script>
+            const toggle = (e) => {
+                console.log(e.target.checked);
+            };
+        </script>
+    </head>
+    <body>
+        <input class="checkbox" type="checkbox" onclick="toggle(event)" />
+    </body>
+</html>
