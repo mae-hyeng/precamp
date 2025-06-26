@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>내 위치 실습</title>
+        <script>
+            const res = [
+                { 이름: "철수네삼겹살", 위도: 43.504557, 경도: 126.897035 },
+                { 이름: "영희네쭈꾸미", 위도: 37.505001, 경도: 126.89677 },
+            ];
+
+            const myLoc = () => {
+                navigator.geolocation.getCurrentPosition((loc) => {
+                    const lat = loc.coords.latitude;
+                    const lon = loc.coords.longitude;
+                    alert(`당신의 위치는 ${lat}, ${lon} 입니다`);
+
+                    res.forEach((r) => {
+                        const close1 = Math.abs(lat - r.위도) <= 3 ? true : false;
+                        const close2 = Math.abs(lon - r.경도) <= 3 ? true : false;
+
+                        if (close1 && close2) {
+                            alert(`${r.이름}이 근처에 있습니다`);
+                        }
+                    });
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="myLoc()">내 근처 맛집보기</button>
+    </body>
+</html>

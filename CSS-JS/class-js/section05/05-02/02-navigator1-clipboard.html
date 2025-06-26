@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>클립보드 실습</title>
+        <script>
+            const copy = () => {
+                const content = document.getElementById("content").innerText;
+                navigator.clipboard.writeText(content);
+                alert("복사되었습니다");
+            };
+
+            const decoCopy = () => {
+                const content = document.getElementById("content").innerText;
+                navigator.clipboard.writeText(`[철수의 정보]: ${content}`);
+                alert("복사되었습니다");
+            };
+        </script>
+    </head>
+    <body>
+        <div>
+            <div id="content">안녕하세요. 철수는 12살이고, 다람쥐초등학교에 다닙니다.</div>
+            <button onclick="copy()">내용복사하기</button>
+            <button onclick="decoCopy()">꾸며서 복사하기</button>
+        </div>
+    </body>
+</html>
