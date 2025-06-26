@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>반복문으로 태그 만들기 실습</title>
+        <script>
+            const createOne = () => {
+                document.getElementById("one").innerHTML = `
+                <h1>사과</h1>
+            `;
+            };
+
+            const createThree = () => {
+                const friends = ["철수", "영희", "훈이"];
+
+                const loopHtml = friends.map((f, idx) => `<h1>${f}는 ${idx}번째</h1>`).join("");
+
+                document.getElementById("three").innerHTML = loopHtml;
+            };
+        </script>
+    </head>
+    <body>
+        <div id="one"></div>
+        <button onclick="createOne()">h1 태그 한 개 만들기</button>
+
+        <div id="three"></div>
+        <button onclick="createThree()">h1 태그 세 개 만들기</button>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>detail</title>
+        <script>
+            const queryString = location.search;
+            const querys = new URLSearchParams(queryString);
+
+            const fNumber = querys.get("number");
+
+            const myFriends = localStorage.getItem("친구목록");
+            const myFriendsList = JSON.parse(myFriends ? myFriends : "[]");
+
+            alert(`${myFriendsList[fNumber].이름}의 페이지에 오신 것을 환영합니다!`);
+        </script>
+    </head>
+    <body></body>
+</html>

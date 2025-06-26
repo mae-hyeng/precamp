@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>main</title>
+        <script>
+            const regF = () => {
+                const friend1 = {
+                    이름: "철수",
+                    나이: 12,
+                };
+
+                const friend2 = {
+                    이름: "영희",
+                    나이: 13,
+                };
+
+                const myFriends = [friend1, friend2];
+                localStorage.setItem("친구목록", JSON.stringify(myFriends));
+            };
+
+            const draF = () => {
+                const myFriends = localStorage.getItem("친구목록");
+                const myFriendsArr = JSON.parse(myFriends ? myFriends : "[]");
+
+                const myFriendsHtml = myFriendsArr
+                    .map(
+                        (mf, idx) =>
+                            `<div><a href = "./02-routing2-detail.html?number=${idx}">이름은 ${mf.이름}이고, 니이는 ${mf.나이}살 입니다</a></div>`
+                    )
+                    .join("");
+
+                document.getElementById("friends").innerHTML = myFriendsHtml;
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="regF()">친구 등록하기</button>
+        <button onclick="draF()">친구 그리기</button>
+        <div id="friends"></div>
+    </body>
+</html>
