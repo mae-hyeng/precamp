@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>문장API 실습</title>
+        <script>
+            const getSentence = () => {
+                fetch(
+                    "https://api.artic.edu/api/v1/artworks?fields=id,title,artist_display,date_display,main_reference_number"
+                ).then((res) => {
+                    res.json().then((r) => {
+                        const data = r.data[0];
+                        console.log(`data = ${JSON.stringify(data)}`);
+                        console.log(data);
+
+                        const title = data.title;
+                        console.log(`title은 ${title}`);
+                    });
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="getSentence()">문장 불러오기</button>
+    </body>
+</html>

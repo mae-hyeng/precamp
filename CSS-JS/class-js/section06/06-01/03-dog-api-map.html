@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>문장API 실습</title>
+        <script>
+            const getImage = () => {
+                fetch("https://dog.ceo/api/breeds/image/random/3").then((res) => {
+                    res.json().then((r) => {
+                        document.getElementById("imgArea").innerHTML = r.message
+                            .map((el) => `<img class="image" src="${el}" />`)
+                            .join("");
+                    });
+                });
+            };
+        </script>
+
+        <style>
+            .image {
+                width: 300px;
+                aspect-ratio: 16 / 9;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="getImage()">이미지 불러오기</button>
+        <div id="imgArea"></div>
+    </body>
+</html>

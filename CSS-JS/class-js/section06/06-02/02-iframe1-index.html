@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>iframe 실습</title>
+        <style>
+            .banner {
+                height: 100px;
+                background-color: skyblue;
+            }
+
+            .nav {
+                height: 50px;
+                background-color: yellow;
+            }
+
+            iframe {
+                border: none;
+            }
+        </style>
+
+        <script>
+            const menu = (type) => {
+                switch (type) {
+                    case "diary":
+                        document.getElementById("router").src = "./02-iframe2-diary.html";
+                        break;
+                    case "dog":
+                        document.getElementById("router").src = "./02-iframe3-dog.html";
+                        break;
+                    case "codecamp":
+                        document.getElementById("router").src = "https://codebootcamp.co.kr";
+                        break;
+                }
+            };
+        </script>
+    </head>
+    <body>
+        <div class="banner">배너이미지</div>
+        <div class="nav">
+            <button onclick="menu('diary')">일기</button>
+            <button onclick="menu('dog')">강아지</button>
+            <button onclick="menu('codecamp')">코드캠프</button>
+        </div>
+
+        <iframe id="router" src="./02-iframe2-diary.html"></iframe>
+    </body>
+</html>

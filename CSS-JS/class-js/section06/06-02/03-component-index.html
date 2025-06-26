@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>페이지이동 컴포넌트 실습</title>
+        <style>
+            .banner {
+                height: 100px;
+                background-color: skyblue;
+            }
+
+            .nav {
+                height: 50px;
+                background-color: yellow;
+            }
+        </style>
+
+        <script src="./03-component-diary.js"></script>
+        <script src="./03-component-dog.js"></script>
+        <script>
+            const menu = (type) => {
+                switch (type) {
+                    case "diary":
+                        document.getElementById("menu").innerHTML = diaryMenu;
+                        break;
+                    case "dog":
+                        document.getElementById("menu").innerHTML = dogMenu;
+                        break;
+                }
+            };
+
+            window.onload = () => {
+                document.getElementById("menu").innerHTML = diaryMenu;
+            };
+        </script>
+    </head>
+    <body>
+        <div class="banner">배너이미지</div>
+        <div class="nav">
+            <button onclick="menu('diary')">일기</button>
+            <button onclick="menu('dog')">강아지</button>
+        </div>
+
+        <div id="menu"></div>
+    </body>
+</html>
