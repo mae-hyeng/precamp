@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>무한 스크롤 실습</title>
+        <style>
+            .child {
+                width: 500px;
+                height: 500px;
+                background-color: green;
+                margin: 50px;
+            }
+        </style>
+        <script>
+            let timer = "false";
+            addEventListener("scroll", () => {
+                if (timer === "false") {
+                    const scrollPercent =
+                        document.documentElement.scrollTop /
+                        (document.documentElement.scrollHeight -
+                            document.documentElement.clientHeight);
+                    console.log("스크롤 감지중");
+
+                    if (scrollPercent >= 0.9) {
+                        console.log("상자 그리기 시작");
+                        document.getElementById("parent").innerHTML += `<div class="child"></div>`;
+                    }
+
+                    timer = setTimeout(() => {
+                        timer = "false";
+                    }, 500);
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <div id="parent">
+            <div class="child"></div>
+            <div class="child"></div>
+            <div class="child"></div>
+        </div>
+    </body>
+</html>

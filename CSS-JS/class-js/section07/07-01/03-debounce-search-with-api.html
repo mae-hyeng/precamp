@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>검색 실습</title>
+        <script>
+            let timer = "false";
+
+            const search = (e) => {
+                clearTimeout(timer);
+
+                timer = setTimeout(() => {
+                    // 재사용을 위해 getElementById() 보다 e.target.value를 사용
+                    const filtered = e.target.value;
+
+                    document.getElementById("searchResult").innerHTML = `
+                        <img src="https://cataas.com/cat/${filtered}/says/hello" width="300px" />
+                    `;
+                }, 1000);
+            };
+        </script>
+    </head>
+    <body>
+        <input type="text" placeholder="고양이 태그를 검색하세요." oninput="search(event)" />
+        <div id="searchResult"></div>
+    </body>
+</html>

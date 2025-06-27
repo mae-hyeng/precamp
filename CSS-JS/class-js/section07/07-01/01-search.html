@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>검색 실습</title>
+        <script>
+            const friends = ["철수", "영희", "철희", "철민", "민희"];
+
+            const search = (e) => {
+                // 재사용을 위해 getElementById() 보다 e.target.value를 사용
+                const filtered = friends.filter((f) => f.includes(e.target.value));
+                document.getElementById("searchResult").innerText = filtered;
+            };
+        </script>
+    </head>
+    <body>
+        <input type="text" placeholder="친구를 검색하세요." oninput="search(event)" />
+        <div id="searchResult"></div>
+    </body>
+</html>
