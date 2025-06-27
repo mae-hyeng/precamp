@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>페이지네이션 페이지번호 실습</title>
+        <script>
+            window.onload = () => {
+                const box = new Array(10)
+                    .fill()
+                    .map((_, i) => `<button>${i + 1}</button>`)
+                    .join("");
+                document.getElementById("page").innerHTML = box;
+            };
+        </script>
+    </head>
+    <body>
+        <div id="page"></div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>텍스트 그라데이션 실습</title>
+        <style>
+            .text1 {
+                /* https://cssgradient.io 에서 검색 가능 */
+                background: linear-gradient(
+                    1deg,
+                    rgba(68, 110, 89, 1) 33%,
+                    rgba(237, 221, 83, 1) 63%
+                );
+                background-clip: text;
+                color: transparent;
+            }
+
+            .text2 {
+                background: radial-gradient(
+                    circle,
+                    rgba(68, 110, 89, 1) 78%,
+                    rgba(237, 221, 83, 1) 92%,
+                    rgba(237, 221, 83, 1) 99%
+                );
+                background-clip: text;
+                color: transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="text1">안녕하세요</h1>
+        <h1 class="text2">안녕하세요</h1>
+    </body>
+</html>

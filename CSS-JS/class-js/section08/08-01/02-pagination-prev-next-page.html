@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>페이지네이션 페이지번호 실습</title>
+        <script>
+            let startPage = 1;
+            const prevPage = () => {
+                startPage -= 10;
+                pageNation();
+            };
+
+            const nextPage = () => {
+                startPage += 10;
+                pageNation();
+            };
+
+            const pageNation = () => {
+                const box = new Array(10)
+                    .fill()
+                    .map((_, i) => `<button>${i + startPage}</button>`)
+                    .join("");
+                document.getElementById("page").innerHTML = box;
+            };
+
+            window.onload = () => {
+                pageNation();
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="prevPage()">이전페이지</button>
+        <span id="page"></span>
+        <button onclick="nextPage()">다음페이지</button>
+    </body>
+</html>

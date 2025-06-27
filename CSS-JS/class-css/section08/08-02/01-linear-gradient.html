@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>선형 그라데이션 실습</title>
+        <style>
+            .box1 {
+                width: 300px;
+                height: 300px;
+
+                /* 1. 수직방향(0도)으로 빨강부터 파랑까지 */
+                background: linear-gradient(0deg, red, blue);
+
+                /* 2. 45도 방향으로 핑크부터 보라까지 */
+                background: linear-gradient(45deg, pink, purple);
+
+                /* 3. 30%까지 핑크, 30% ~ 100%까지 보라 */
+                background: linear-gradient(45deg, pink 30%, purple 30% 100%);
+
+                /* 4. 핑크, 보라 */
+                background: linear-gradient(45deg, pink, purple 30%);
+            }
+
+            .box2 {
+                width: 300px;
+                height: 300px;
+
+                background: linear-gradient(45deg, yellow, transparent),
+                    linear-gradient(225deg, red, transparent);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </body>
+</html>

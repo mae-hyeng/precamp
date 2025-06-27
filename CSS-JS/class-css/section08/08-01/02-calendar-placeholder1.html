@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>달력 클릭 영역 실습</title>
+        <style>
+            .calendar {
+                position: relative;
+                width: 200px;
+            }
+
+            .calendar::-webkit-calendar-picker-indicator {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+
+                background: transparent;
+                z-index: 1; /* placeholder 아래에 있으면 선택이 안되기 때문에 위로 올려줌 */
+            }
+
+            /* placeholder */
+            .calendar::-webkit-datetime-edit-text,
+            ::-webkit-datetime-edit-year-field,
+            ::-webkit-datetime-edit-month-field,
+            ::-webkit-datetime-edit-day-field {
+                display: none;
+            }
+
+            .calendar::after {
+                content: "생일을 선택하세요.";
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <input class="calendar" type="date" />
+    </body>
+</html>
