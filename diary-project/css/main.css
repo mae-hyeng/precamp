@@ -1,0 +1,153 @@
+:root {
+    --gray-color: #e4e4e4;
+    --white-color: #ffffff;
+    --black-color: #000000;
+
+    --border-gray: 1px solid #c7c7c7;
+    --border-radius: 16px;
+
+    --toggle-checked: #3ad84a;
+    --dark-mode-text: #1c1c1c;
+
+    --gray-50: #f2f2f2;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 16px;
+    padding: 20px;
+}
+
+main {
+}
+
+/* footer start */
+footer {
+    background-color: var(--gray-50);
+}
+/* footer end */
+
+/* display */
+.flex {
+    display: flex;
+}
+
+/* alien item center */
+.a-i-c {
+    align-items: center;
+}
+
+/* color start */
+.c-g {
+    color: var(--gray-color);
+}
+/* color end */
+
+.f-d-c {
+    flex-direction: column;
+}
+
+.logoImg {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+}
+
+/* dark mode btn start */
+
+.toggle {
+    appearance: none;
+    width: 58px;
+    height: 32px;
+    background-color: var(--gray-color);
+    border-radius: 25px;
+    padding: 4px;
+}
+
+.toggle::after {
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.toggle:checked {
+    background-color: var(--toggle-checked);
+}
+
+.toggle:checked::after {
+    transform: translate(100%);
+}
+
+/* dark mode btn end */
+
+/* storage category start */
+.storage-category {
+    width: 119px;
+    height: 48px;
+    font-size: 1.5rem;
+    color: var(--gray-color);
+
+    cursor: pointer;
+}
+
+.storage-category.selected {
+    color: var(--black-color);
+    text-decoration: underline;
+}
+/* storage category end */
+
+/* 2s-register start */
+.s-s-r {
+    display: flex;
+    justify-content: space-between;
+}
+
+.s-s-r select {
+    width: 120px;
+    height: 48px;
+    border: var(--border-gray);
+    border-radius: var(--border-radius);
+}
+
+.s-s-r input {
+    width: 320px;
+    height: 48px;
+    border: var(--border-gray);
+    border-radius: var(--border-radius);
+}
+
+.s-s-r button {
+    width: 110px;
+    height: 48px;
+    color: var(--white-color);
+    background-color: var(--black-color);
+    border-radius: var(--border-radius);
+}
+/* 2s-register end */
