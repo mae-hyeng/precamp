@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- 사파리처럼 한글 인식 안되는 브라우저에서도 잘 나오게 설정하는 태그 -->
+        <title>크로스 브라우징 CAN-I-USE 실습</title>
+        <style>
+            .scrollBox {
+                width: 500px;
+                height: 500px;
+                overflow: scroll;
+
+                /* 사진이 중간에 로드 되어도 닻이 현재 스크롤에 걸려있어서 안올라감 => 하지만 사파리에서는 적용 안됨 */
+                overflow-anchor: auto;
+            }
+
+            .imgBox {
+                display: none;
+            }
+        </style>
+        <script>
+            setTimeout(() => {
+                document.getElementById("imgBox").style = "display : block";
+            }, 2000);
+        </script>
+    </head>
+    <body>
+        <div class="scrollBox">
+            <div id="imgBox" class="imgBox">
+                <img src="./00-image.jpg" width="100%" />
+                <img src="./00-image.jpg" width="100%" />
+                <img src="./00-image.jpg" width="100%" />
+                <img src="./00-image.jpg" width="100%" />
+                <img src="./00-image.jpg" width="100%" />
+                <img src="./00-image.jpg" width="100%" />
+                <img src="./00-image.jpg" width="100%" />
+            </div>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+            <p>줄읽기</p>
+        </div>
+    </body>
+</html>

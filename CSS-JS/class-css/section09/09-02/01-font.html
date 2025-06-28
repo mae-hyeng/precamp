@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>폰트 실습</title>
+        <style>
+            @font-face {
+                font-family: myFont;
+                src: url(./00-myfont01.woff2);
+            }
+
+            @font-face {
+                font-family: myFont2;
+                src: url(./00-myfont02.woff2);
+            }
+
+            * {
+                font-family: myFont;
+            }
+
+            .text {
+                font-family: myFont2;
+            }
+        </style>
+    </head>
+    <body>
+        <div>안녕하세요</div>
+        <div>안녕하세요</div>
+
+        <div class="text">안녕하세요</div>
+    </body>
+</html>

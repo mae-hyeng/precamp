@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>폰트 포잇-포웃 실습</title>
+        <style>
+            @font-face {
+                font-family: myFont;
+                src: url(./00-myfont02.woff2);
+
+                /* foit (최초에 안보여주기), 그럼에도 3초동안 못받아오면 기본폰트 보여주기 */
+                font-display: block; /* 크롬은 디폴트가 foit 이기 때문에 크롬으로 열 것이라면 생략 가능 */
+            }
+
+            @font-face {
+                font-family: myFont2;
+                src: url(./00-myfont02.woff2);
+
+                /* fout (최초에 기본 폰트로 보여주고, 다운로드 되면 바꿔치기) */
+                font-display: swap;
+            }
+
+            .foit {
+                font-family: myFont;
+            }
+
+            .fout {
+                font-family: myFont2;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="foit">foit 폰트</div>
+        <div class="fout">fout 폰트</div>
+    </body>
+</html>

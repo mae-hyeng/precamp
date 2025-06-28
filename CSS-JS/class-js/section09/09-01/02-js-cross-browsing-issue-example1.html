@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <title>크로스 브라우징 실습</title>
+        <script>
+            const getDate = () => {
+                // const date = new Date("2025-07-19 09:00:00"); // 크롬 O, 사파리 X
+                const date = new Date("2025/07/19 09:00:00"); // 크롬 O, 사파리 O
+                const month = date.getMonth() + 1;
+                alert(`자격증 시험일은 ${month}월달 입니다.`);
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="getDate()">시험날짜</button>
+    </body>
+</html>

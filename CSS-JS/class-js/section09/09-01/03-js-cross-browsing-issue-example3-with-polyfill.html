@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>크로스 브라우징 실습</title>
+        <!-- 폴리필 다운로드 => 폴리릴 : 브라우저별 제공되지 않는 JS 기능들을 다 구현해 놓은 것 -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.43.0/minified.js"></script>
+        <script>
+            const getFruit = () => {
+                const fruits = ["사과", "바나나", "딸기"];
+                // console.log(fruits[fruits.length - 1]);
+                console.log(fruits.at(-1)); // 비교적 최신 함수여서 오래된 브라우저에서는 실행 안됨.
+                // 위의 문제를 해결하기 위해 core-js 설치
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="getFruit()">과일</button>
+    </body>
+</html>
