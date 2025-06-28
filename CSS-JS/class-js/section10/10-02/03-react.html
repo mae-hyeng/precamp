@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>리액트 실습</title>
+
+        <!-- 리액트 다운로드 -->
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script
+            crossorigin
+            src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        ></script>
+
+        <!-- 바벨 다운로드 -->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <!-- 컴포넌트 불러오기 -->
+        <script type="text/babel" src="./03-button.js"></script>
+        <script type="text/babel" src="./03-input.js"></script>
+
+        <!-- 바벨 다운로드 하게 되면 -->
+        <!-- 1. 최신버전으로 작성해도, 옛날 문법으로 바꿔줌 -->
+        <!-- 2. 가짜 HTML(JSX)로 입력한 것들을 진짜 HTML으로 변환해서 에러 안나게 함 -->
+        <script type="text/babel">
+            const root = ReactDOM.createRoot(document.getElementById("root"));
+            root.render(
+                <div>
+                    {myBtn}
+                    <br />
+                    {MyInput()}
+                    <MyInput />
+                </div>
+            );
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+    </body>
+</html>

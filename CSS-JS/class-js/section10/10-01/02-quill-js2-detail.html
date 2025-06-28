@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>웹에디터 실습</title>
+        <script>
+            window.onload = () => {
+                const iam = localStorage.getItem("iam");
+                document.getElementById("box").innerHTML = iam;
+            };
+        </script>
+    </head>
+    <body>
+        <div id="box"></div>
+    </body>
+</html>

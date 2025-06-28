@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>드래그 앤 드롭 실습</title>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.6/Sortable.min.js"
+            integrity="sha512-csIng5zcB+XpulRUa+ev1zKo7zRNGpEaVfNB9On1no9KYTEY/rLGAEEpvgdw6nim1WdTuihZY1eqZ31K7/fZjw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script>
+            window.onload = () => {
+                const fruitGroup = document.getElementById("fruitGroup");
+                new Sortable(fruitGroup, {
+                    // 옵션 추가도 가능
+                });
+            };
+        </script>
+    </head>
+    <body>
+        <ul id="fruitGroup">
+            <li>사과</li>
+            <li>바나나</li>
+            <li>딸기</li>
+        </ul>
+    </body>
+</html>

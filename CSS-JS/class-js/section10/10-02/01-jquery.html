@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>제이쿼리 실습</title>
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"
+        ></script>
+        <script>
+            const register = () => {
+                // 1. 자바스크립트
+                // document.getElementById("profileID").innerHTML = "<p>이름 : 철수</p>";
+                // document.getElementsByClassName("profileCSS").item(0).style = "color : red";
+
+                // 2. 제이쿼리
+                $("#profileID").html("<p>이름 : 영희</p>");
+                $(".profileCSS")[0].style = "color : blue";
+            };
+        </script>
+    </head>
+    <body>
+        <div id="profileID" class="profileCSS"></div>
+        <button onclick="register()">등록하기</button>
+    </body>
+</html>
