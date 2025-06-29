@@ -32,20 +32,21 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
-    height: 60px;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 16px;
     padding: 20px;
 }
 
 main {
+    width: 100%;
+    padding: 0px 20px;
 }
 
 /* footer start */
 footer {
     background-color: var(--gray-50);
+    width: 100%;
+    padding: 0 20px;
 }
 /* footer end */
 
@@ -53,6 +54,12 @@ footer {
 .flex {
     display: flex;
 }
+
+/* gap start */
+.gap-10 {
+    gap: 10px;
+}
+/* gap end */
 
 /* alien item center */
 .a-i-c {
@@ -107,10 +114,24 @@ footer {
 
 /* dark mode btn end */
 
+.main-wrapper div {
+    padding: 10px 0px;
+}
+
 /* storage category start */
+.contents-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contents {
+    display: flex;
+    justify-items: center;
+}
+
 .storage-category {
-    width: 119px;
-    height: 48px;
+    font-weight: 700;
     font-size: 1.5rem;
     color: var(--gray-color);
 
@@ -119,7 +140,7 @@ footer {
 
 .storage-category.selected {
     color: var(--black-color);
-    text-decoration: underline;
+    border-bottom: 2px solid black;
 }
 /* storage category end */
 
@@ -133,14 +154,14 @@ footer {
     width: 120px;
     height: 48px;
     border: var(--border-gray);
-    border-radius: var(--border-radius);
+    border-radius: 10px;
 }
 
 .s-s-r input {
     width: 320px;
     height: 48px;
     border: var(--border-gray);
-    border-radius: var(--border-radius);
+    border-radius: 160px;
 }
 
 .s-s-r button {
@@ -148,6 +169,6 @@ footer {
     height: 48px;
     color: var(--white-color);
     background-color: var(--black-color);
-    border-radius: var(--border-radius);
+    border-radius: 10px;
 }
 /* 2s-register end */

@@ -11,17 +11,19 @@
     <body>
         <header>
             <div><h5>My Diary</h5></div>
-            <div class="flex a-i-c">
+            <div class="flex a-i-c gap-10">
                 다크모드
                 <input class="toggle" type="checkbox" />
             </div>
         </header>
         <main>
-            <div><img class="logoImg" src="../image/logo.png" /></div>
-            <div>
-                <div class="flex">
-                    <div class="storage-category">일기보관함</div>
-                    <div class="storage-category">사진보관함</div>
+            <div><img class="logoImg" src="../image/banner.png" /></div>
+            <div class="main-wrapper">
+                <div class="flex gap-10 category-wrapper">
+                    <div onclick="selectCategory(event)" class="storage-category selected">
+                        일기보관함
+                    </div>
+                    <div onclick="selectCategory(event)" class="storage-category">사진보관함</div>
                 </div>
                 <div class="s-s-r">
                     <div>
@@ -38,8 +40,9 @@
                         <button>+ 일기쓰기</button>
                     </div>
                 </div>
-                <div>등록된 일기가 없습니다.</div>
-                <div>1</div>
+                <div class="contents-wrapper">
+                    <div class="contents">일기 없음</div>
+                </div>
             </div>
         </main>
         <footer>
