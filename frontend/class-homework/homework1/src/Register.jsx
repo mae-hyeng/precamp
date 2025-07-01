@@ -2,8 +2,38 @@ import "./Register.css";
 import profile from "./assets/profile.png";
 import logo from "./assets/logo.png";
 import addImage from "./assets/addImage.png";
+import { useState } from "react";
 
 const Register = () => {
+    const [writer, setWriter] = useState("");
+    const [password, setPassword] = useState("");
+    const [title, setTitle] = useState("");
+    const [content, setContent] = useState("");
+
+    const onChangeInput = (e) => {
+        const { name, value } = e.target;
+
+        if (name === "writer") setWriter(value);
+        else if (name === "password") setPassword(value);
+        else if (name === "title") setTitle(value);
+        else if (name === "content") setContent(value);
+
+        if (value) document.getElementById(`${name}-error`).innerText = "";
+    };
+
+    const onClickSubmit = () => {
+        if (!writer) document.getElementById("writer-error").innerText = "작성자를 입력해주세요";
+
+        if (!password)
+            document.getElementById("password-error").innerText = "비밀번호를 입력해주세요";
+
+        if (!title) document.getElementById("title-error").innerText = "제목을 입력해주세요";
+
+        if (!content) document.getElementById("content-error").innerText = "내용을 입력해주세요";
+
+        if (writer && password && title && content) alert("게시글 등록이 가능한 상태입니다!");
+    };
+
     return (
         <div className="Register">
             <div className="header">
@@ -32,13 +62,23 @@ const Register = () => {
                             작성자
                             <span className="require-input">*</span>
                         </div>
-                        <input placeholder="작성자 명을 입력해 주세요." />
+                        <input
+                            onChange={onChangeInput}
+                            name="writer"
+                            placeholder="작성자 명을 입력해 주세요."
+                        />
+                        <div id="writer-error" className="error"></div>
                     </div>
                     <div className="section-1-wrapper">
                         <div>
                             비밀번호<span className="require-input">*</span>
                         </div>
-                        <input placeholder="작성자 명을 입력해 주세요." />
+                        <input
+                            onChange={onChangeInput}
+                            name="password"
+                            placeholder="비밀번호를 입력해 주세요."
+                        />
+                        <div id="password-error" className="error"></div>
                     </div>
                 </div>
                 <div className="line"></div>
@@ -46,14 +86,24 @@ const Register = () => {
                     <div>
                         제목<span className="require-input">*</span>
                     </div>
-                    <input placeholder="제목을 입력해 주세요." />
+                    <input
+                        onChange={onChangeInput}
+                        name="title"
+                        placeholder="제목을 입력해 주세요."
+                    />
+                    <div id="title-error" className="error"></div>
                 </div>
                 <div className="line"></div>
                 <div className="main-section-3">
                     <div>
                         내용<span className="require-input">*</span>
                     </div>
-                    <textarea placeholder="내용을 입력해 주세요."></textarea>
+                    <textarea
+                        onChange={onChangeInput}
+                        name="content"
+                        placeholder="내용을 입력해 주세요."
+                    ></textarea>
+                    <div id="content-error" className="error"></div>
                 </div>
                 <div className="main-section-4">
                     <div>주소</div>
@@ -83,7 +133,9 @@ const Register = () => {
             </div>
             <div className="footer">
                 <button className="cancel">취소</button>
-                <button className="submit">등록하기</button>
+                <button onClick={onClickSubmit} className="submit">
+                    등록하기
+                </button>
             </div>
         </div>
     );
