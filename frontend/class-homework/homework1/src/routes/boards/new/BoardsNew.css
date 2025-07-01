@@ -1,23 +1,21 @@
-.Register {
+.BoardsNew {
     display: flex;
     flex-direction: column;
     gap: 3rem;
-
-    padding: 1rem 10rem;
 }
 
 button {
     cursor: pointer;
 }
 
-.Register input {
+.BoardsNew input {
     border: 1px solid #d4d3d3;
     border-radius: 0.5rem;
     padding: 1rem;
     outline: none;
 }
 
-.Register textarea {
+.BoardsNew textarea {
     resize: none;
     height: 20rem;
     border: 1px solid #d4d3d3;
@@ -26,31 +24,9 @@ button {
     outline: none;
 }
 
-.Register input::placeholder,
-.Register textarea::placeholder {
+.BoardsNew input::placeholder,
+.BoardsNew textarea::placeholder {
     color: #d4d3d3;
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-}
-
-.header-category {
-    cursor: pointer;
-    padding: 0.5rem;
-}
-
-.header-category.selected {
-    font-weight: 700;
-    border-bottom: 2px solid black;
-}
-
-.left-header,
-.right-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
 
 .line {
