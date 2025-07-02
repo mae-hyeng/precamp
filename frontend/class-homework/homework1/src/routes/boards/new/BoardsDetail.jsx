@@ -29,7 +29,7 @@ const BoardsDetail = () => {
                         <div className="info-regDate">2025.07.01</div>
                     </div>
                 </div>
-                <div class="line"></div>
+                <div className="line"></div>
                 <div className="detail-main">
                     <div className="detail-main-loc">
                         <button>서울특별시 영등포구</button>
