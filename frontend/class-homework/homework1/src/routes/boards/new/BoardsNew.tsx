@@ -1,7 +1,6 @@
 import "./BoardsNew.css";
 import addImage from "../../../assets/addImage.png";
 import { useState } from "react";
-import Header from "../../Header";
 
 const BoardsNew = () => {
     const [writer, setWriter] = useState("");
