@@ -1,0 +1,23 @@
+.btn {
+    background-color: yellow;
+
+    @apply text-myColor; /* 테일윈드 CSS랑 함께 쓰기 */
+}
+
+.box {
+    width: 200px;
+    height: 200px;
+    /* background-color: red; */
+
+    @apply bg-myColor2; /* 테일윈드 CSS랑 함께 쓰기 */
+}
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    /* background-color: red; */
+
+    @apply bg-myColor2; /* 테일윈드 CSS랑 함께 쓰기 */
+
+    padding: 30px; /* @tailwind base에 이미 box-sizing: border-box 들어있음 */
+}
