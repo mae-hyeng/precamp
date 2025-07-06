@@ -1,0 +1,45 @@
+function useQuery(qqq) {
+    // qqq API 요청하기 실습
+
+    return {
+        data : {
+            fetchBoard: {
+                writer: "짱구"
+            }
+        },
+        loading: false,
+        refetch: () => {
+            console.log("리페치 실행")
+        }
+    }
+}
+
+const result = useQuery("FETCH_BOARDS")
+undefined
+
+result.data
+{fetchBoard: {…}}
+
+result.data.fetchBoard.writer
+'짱구'
+
+result.loading
+false
+
+result.refetch()
+VM7259:12 리페치 실행
+undefined
+
+const {data, loading, refetch } = useQuery("FETCH_BOARDS")
+undefined
+
+data
+{fetchBoard: {…}}
+
+loading
+false
+
+refetch
+() => {
+            console.log("리페치 실행")
+        }
