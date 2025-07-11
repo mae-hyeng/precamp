@@ -112,7 +112,7 @@ export const BoardsListPage = ({ data }: IBoardListProps) => {
                                             <Image
                                                 id={idx + 1}
                                                 className={styles.board_delete}
-                                                onClick={onClickDeleteBoard}
+                                                onClick={() => onClickDeleteBoard(d._id)}
                                                 src="/images/delete.png"
                                                 width={22}
                                                 height={0}

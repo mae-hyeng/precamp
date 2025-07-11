@@ -12,11 +12,11 @@ export const BoardsList = () => {
         router.push(`/boards/detail/${boardId}`);
     };
 
-    const onClickDeleteBoard = (e) => {
+    const onClickDeleteBoard = (boardId) => {
         if (confirm("정말 삭제하시겠습니까?")) {
             deleteBoard({
                 variables: {
-                    number: Number(e.target.id),
+                    boardId: boardId,
                 },
                 refetchQueries: [{ query: FETCH_BOARDS }],
             });

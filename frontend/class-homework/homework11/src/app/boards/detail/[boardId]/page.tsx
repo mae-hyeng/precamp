@@ -1,6 +1,6 @@
 "use client";
 
-import { FETCH_BOARD } from "@/components/boards-detail/queries";
+import { FETCH_BOARD } from "@/commons/hooks/queries";
 import { BoardsDetail } from "@/components/boards-detail";
 import { useQuery } from "@apollo/client";
 import { useParams } from "next/navigation";

@@ -3,8 +3,9 @@
 import { useMutation } from "@apollo/client";
 import { useParams, useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
-import { CREATE_BOARD, FETCH_BOARD, UPDATE_BOARD } from "./queries";
+import { CREATE_BOARD, UPDATE_BOARD } from "./queries";
 import { IMyVariables } from "./types";
+import { FETCH_BOARD } from "@/commons/hooks/queries";
 
 export const useBoardsWrite = () => {
     const [writer, setWriter] = useState("");
