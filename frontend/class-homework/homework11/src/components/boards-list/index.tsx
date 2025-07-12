@@ -92,7 +92,7 @@ export const BoardsListPage = ({ data }: IBoardListProps) => {
                                 <div className={styles.board_header_delete}></div>
                             </div>
                             <div className={styles.board_body}>
-                                {data?.fetchBoards.map((d, idx) => (
+                                {data?.fetchBoards?.map((d, idx) => (
                                     <div key={idx + 1} className={styles.board_row}>
                                         <div className={styles.board_num}>{idx + 1}</div>
                                         <div

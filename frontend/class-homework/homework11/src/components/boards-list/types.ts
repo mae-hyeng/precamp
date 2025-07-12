@@ -1,3 +1,5 @@
+import { FetchBoardQuery } from "@/commons/graphql/graphql";
+
 export interface IBoardListProps {
-    data: any;
+    data?: FetchBoardQuery;
 }

@@ -3,10 +3,11 @@
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/navigation";
 import { DELETE_BOARD, FETCH_BOARDS } from "./queries";
+import { DeleteBoardDocument } from "@/commons/graphql/graphql";
 
 export const BoardsList = () => {
     const router = useRouter();
-    const [deleteBoard] = useMutation(DELETE_BOARD);
+    const [deleteBoard] = useMutation(DeleteBoardDocument);
 
     const onClickBoard = (boardId) => {
         router.push(`/boards/detail/${boardId}`);

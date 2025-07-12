@@ -3,9 +3,9 @@
 import { useMutation } from "@apollo/client";
 import { useParams, useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
-import { CREATE_BOARD, UPDATE_BOARD } from "./queries";
 import { IMyVariables } from "./types";
 import { FETCH_BOARD } from "@/commons/hooks/queries";
+import { CreateBoardDocument, UpdateBoardDocument } from "@/commons/graphql/graphql";
 
 export const useBoardsWrite = () => {
     const [writer, setWriter] = useState("");
@@ -13,8 +13,8 @@ export const useBoardsWrite = () => {
     const [title, setTitle] = useState("");
     const [contents, setContents] = useState("");
 
-    const [createBoard] = useMutation(CREATE_BOARD);
-    const [updateBoard] = useMutation(UPDATE_BOARD);
+    const [createBoard] = useMutation(CreateBoardDocument);
+    const [updateBoard] = useMutation(UpdateBoardDocument);
 
     const router = useRouter();
     const params = useParams();
