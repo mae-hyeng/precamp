@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 // import { useRouter } from "next/router";
 
 const FETCH_BOARD = gql`
-    query fetchBoard($page: Int) {
+    query fetchBoard1002($page: Int) {
         fetchBoard(number: $page) {
             number
             writer

@@ -3,7 +3,7 @@ import { useMutation, gql } from "@apollo/client";
 import { useState } from "react";
 
 const myGraphqlSetting = gql`
-    mutation createBoard($myWriter: String, $myTitle: String, $myContent: String) {
+    mutation createBoard0604($myWriter: String, $myTitle: String, $myContent: String) {
         createBoard(writer: $myWriter, title: $myTitle, contents: $myContent) {
             _id
             number

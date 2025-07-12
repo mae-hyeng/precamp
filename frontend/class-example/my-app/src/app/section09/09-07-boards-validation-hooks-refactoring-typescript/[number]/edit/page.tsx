@@ -6,7 +6,7 @@ import { gql, useQuery } from "@apollo/client";
 import { useParams } from "next/navigation";
 
 const FETCH_BOARD = gql`
-    query fetchBoard($page: Int) {
+    query fetchBoard0907($page: Int) {
         fetchBoard(number: $page) {
             number
             writer

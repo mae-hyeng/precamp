@@ -5,7 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
 const myGraphqlSetting = gql`
-    mutation createBoard($myWriter: String, $myTitle: String, $myContents: String) {
+    mutation createBoard0903($myWriter: String, $myTitle: String, $myContents: String) {
         createBoard(writer: $myWriter, title: $myTitle, contents: $myContents) {
             _id
             number
@@ -15,7 +15,12 @@ const myGraphqlSetting = gql`
 `;
 
 const UPDATE_BOARD = gql`
-    mutation updateBoard($myNumber: Int, $myWriter: String, $myTitle: String, $myContents: String) {
+    mutation updateBoard0903(
+        $myNumber: Int
+        $myWriter: String
+        $myTitle: String
+        $myContents: String
+    ) {
         updateBoard(number: $myNumber, writer: $myWriter, title: $myTitle, contents: $myContents) {
             _id
             number
