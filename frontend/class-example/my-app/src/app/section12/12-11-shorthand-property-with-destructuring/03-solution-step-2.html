@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>안전한 리팩토링 실습</title>
+        <script>
+            const abc = ({ name, age, school }) => {
+                console.log(name); // 철수
+                console.log(age); // 12
+                console.log(school); // 다람쥐 초등학교
+            };
+
+            const myName = "철수";
+            const myAge = 12;
+            const mySchool = "다람쥐 초등학교";
+
+            const profile = {
+                name: myName,
+                age: myAge,
+                school: mySchool,
+            };
+            abc(profile);
+        </script>
+    </head>
+    <body></body>
+</html>

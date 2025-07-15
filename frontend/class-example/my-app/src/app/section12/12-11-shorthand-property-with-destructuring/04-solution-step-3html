@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>안전한 리팩토링 실습</title>
+        <script>
+            const abc = ({ name, age, school }) => {
+                console.log(name); // 철수
+                console.log(age); // 12
+                console.log(school); // 다람쥐 초등학교
+            };
+
+            const name = "철수";
+            const age = 12;
+            const school = "다람쥐 초등학교";
+
+            // const profile = {
+            //     name: name,
+            //     age: age,
+            //     school: school,
+            // };                        => shorthand-property(키, 밸류가 같으므로 합치기)
+            const profile = {
+                name,
+                age,
+                school,
+            };
+            abc(profile);
+        </script>
+    </head>
+    <body></body>
+</html>
