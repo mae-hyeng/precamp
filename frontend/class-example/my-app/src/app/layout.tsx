@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ApolloSetting from "@/commons/settings/06-02-apollo-setting";
+import Layout from "@/commons/layout";
 
 const myFont = localFont({
     src: "./fonts/GeistVF.woff",
@@ -28,7 +29,9 @@ export default function RootLayout({ children }: IProps) {
         <html lang="en">
             <body className={`${myFont.variable} ${globalFont.variable}`}>
                 <div>============== 여기 위는 레이아웃 ==============</div>
-                <ApolloSetting>{children}</ApolloSetting>
+                <ApolloSetting>
+                    <Layout>{children}</Layout>
+                </ApolloSetting>
                 <div>============== 여기 아래는 레이아웃 ==============</div>
             </body>
         </html>
