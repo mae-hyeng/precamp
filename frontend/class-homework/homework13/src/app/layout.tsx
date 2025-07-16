@@ -23,8 +23,10 @@ export default function RootLayout(props) {
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <Header />
-                <ApolloSetting>{props.children}</ApolloSetting>
+                <ApolloSetting>
+                    <Header />
+                    {props.children}
+                </ApolloSetting>
             </body>
         </html>
     );
