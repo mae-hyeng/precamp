@@ -70,9 +70,11 @@ export const BoardsDetail = ({ data }: IBoardDetailProps) => {
                             <ReactPlayer
                                 src={data?.fetchBoard.youtubeUrl}
                                 className={styles.youtube_player}
+                                width={"100%"}
+                                height={"100%"}
                                 muted
                                 controls
-                                light
+                                // light
                             />
                         </div>
                     </div>
