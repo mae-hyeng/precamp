@@ -12,22 +12,4 @@
     align-items: center;
 }
 
-.comment_wrapper {
-    padding: 1rem 0rem;
-}
-
-.divideLine {
-    width: 100%;
-    border-top: 1px solid #d4d3d3;
-}
-
-.user_wrapper,
-.detail_user_info {
-    display: flex;
-    gap: 1rem;
-}
-
-.detail_comment_contents {
-    color: gray;
-}
 /* detail-all-comment end */

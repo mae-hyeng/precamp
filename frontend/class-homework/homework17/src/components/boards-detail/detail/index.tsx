@@ -90,6 +90,16 @@ export const BoardsDetail = ({ data }: IBoardDetailProps) => {
                     </div>
                 </div>
                 <div className={styles.divideLine}></div>
+                <div className={styles.detail_reg_comment_img_wrapper}>
+                    <Image
+                        src="/images/chat.png"
+                        alt="댓글이미지"
+                        width={25}
+                        height={0}
+                        sizes="100vw"
+                    />
+                    댓글
+                </div>
             </div>
         </>
     );

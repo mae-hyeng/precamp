@@ -1,34 +1,24 @@
 "use client";
 
-import Image from "next/image";
 import styles from "./styles.module.css";
 import { useBoardComment } from "./hook";
 
 import { Rate } from "antd";
 
-export const CommentWrite = () => {
+export const CommentWrite = ({ isEdit, setIsEdit, comment }) => {
     const {
         writer,
         password,
         contents,
         rating,
         onClickSubmitComment,
+        onClickUpdateComment,
         onChangeInput,
         onChangeRating,
-    } = useBoardComment();
+    } = useBoardComment({ comment, setIsEdit });
 
     return (
-        <div className={styles.detail_reg_comment}>
-            <div className={styles.detail_reg_comment_img_wrapper}>
-                <Image
-                    src="/images/chat.png"
-                    alt="댓글이미지"
-                    width={25}
-                    height={0}
-                    sizes="100vw"
-                />
-                댓글
-            </div>
+        <div className={isEdit ? styles.detail_reg_comment_edit : styles.detail_reg_comment}>
             <Rate allowHalf onChange={onChangeRating} value={rating} />
             <div className={styles.writer_password_wrapper}>
                 <div className={styles.writer_wrapper}>
@@ -40,7 +30,8 @@ export const CommentWrite = () => {
                         onChange={onChangeInput}
                         name="writer"
                         placeholder="작성자 명을 입력해 주세요."
-                        value={writer}
+                        value={comment?.writer ?? writer}
+                        disabled={isEdit}
                     />
                 </div>
                 <div className={styles.password_wrapper}>
@@ -62,7 +53,9 @@ export const CommentWrite = () => {
                 value={contents}
             ></textarea>
             <div className={styles.detail_reg_comment_btn_wrapper}>
-                <button onClick={onClickSubmitComment}>댓글 등록</button>
+                <button onClick={isEdit ? onClickUpdateComment : onClickSubmitComment}>
+                    댓글 {isEdit ? "수정" : "등록"}
+                </button>
             </div>
         </div>
     );

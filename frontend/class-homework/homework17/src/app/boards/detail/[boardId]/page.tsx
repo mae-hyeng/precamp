@@ -18,14 +18,12 @@ const BoardsDetailPage = () => {
     const commentsData = useQuery(FETCH_BOARD_COMMENTS, {
         variables: {
             boardId: params.boardId,
-
-            // page: 0
         },
     });
     return (
         <>
             <BoardsDetail data={data} commentsData={commentsData} />
-            <CommentWrite />
+            <CommentWrite isEdit={false} />
             <CommentList commentsData={commentsData} />
         </>
     );
