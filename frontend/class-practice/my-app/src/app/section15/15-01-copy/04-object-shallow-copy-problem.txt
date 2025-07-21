@@ -1,0 +1,41 @@
+const profile = {
+    name: "철수",
+    age: 12,
+    school: "다람쥐초등학교",
+    hobby: {
+        hobby1: "수영하기",
+        hobby2: "축구하기",
+    }
+}
+undefined
+
+const profile2 = {...profile}
+undefined
+
+profile
+{name: '철수', age: 12, school: '다람쥐초등학교', hobby: {…}}
+
+profile2
+{name: '철수', age: 12, school: '다람쥐초등학교', hobby: {…}}
+
+profile2.hobby.hobby1 = "음악하기"
+'음악하기'
+
+profile2
+{name: '철수', age: 12, school: '다람쥐초등학교', hobby: {…}}
+
+age: 12
+hobby: {hobby1: '음악하기', hobby2: '축구하기'}
+name: "철수"
+school: "다람쥐초등학교"
+[[Prototype]]: Object
+
+profile
+{name: '철수', age: 12, school: '다람쥐초등학교', hobby: {…}}
+age: 12
+hobby: {hobby1: '음악하기', hobby2: '축구하기'}
+name: "철수"
+school: "다람쥐초등학교"
+[[Prototype]]: Object
+
+// profile을 복사한 profile2의 hobby.hobby1을 변경했는데 profile에도 영향이 감 
