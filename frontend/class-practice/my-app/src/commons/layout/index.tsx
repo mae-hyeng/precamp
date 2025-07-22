@@ -14,7 +14,9 @@ interface ILayout {
 
 export default function Layout({ children }: ILayout) {
     const pathName = usePathname();
+    console.log("======================");
     console.log("pathName : ", pathName);
+    console.log("======================");
 
     const isHiddenHeader = HIDDEN_HEADERS.includes(pathName);
     return (

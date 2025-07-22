@@ -1,0 +1,45 @@
+class Monster {
+    power = 50;
+
+    attack () {
+        console.log("공격시작");
+    }
+}
+undefined
+
+class SuperMonster extends Monster {
+
+    // 오버라이딩
+    attack () {
+        console.log("슈퍼몬스터 필살기")
+    }
+
+    run () {
+        console.log("도망가기")
+    }
+}
+undefined
+
+const monster = new Monster()
+undefined
+
+monster.power
+50
+
+monster.attack()
+51706-5b63f2c0f63a454b.js:1 공격시작
+undefined
+
+const superMonster = new SuperMonster()
+undefined
+
+superMonster.power
+50
+
+superMonster.attack()
+51706-5b63f2c0f63a454b.js:1 슈퍼몬스터 필살기
+undefined
+
+superMonster.run()
+51706-5b63f2c0f63a454b.js:1 도망가기
+undefined

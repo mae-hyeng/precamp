@@ -1,0 +1,11 @@
+this
+Window {0: global, window: Window, self: Window, document: document, name: '', location: Location, …}
+
+function plus () {
+    console.log(this)
+}
+undefined
+
+plus()
+51706-5b63f2c0f63a454b.js:1 Window {0: global, window: Window, self: Window, document: document, name: '', location: Location, …}
+undefined
