@@ -7,7 +7,12 @@ import { IBoardListProps } from "./types";
 import { Pagination } from "../pagination";
 import { BoardSearchPage } from "../search";
 
-export const BoardsListPage = ({ data, refetch, lastPage }: IBoardListProps) => {
+export const BoardsListPage = ({
+    data,
+    lastPage,
+    refetch,
+    boardsCountRefetch,
+}: IBoardListProps) => {
     const {
         keyword,
         onClickBoard,
@@ -15,7 +20,7 @@ export const BoardsListPage = ({ data, refetch, lastPage }: IBoardListProps) => 
         onClickRegister,
         onChangeKeyword,
         onChangeDatePicker,
-    } = BoardsList({ refetch });
+    } = BoardsList({ refetch, boardsCountRefetch });
     return (
         <>
             <div className={styles.Page}>

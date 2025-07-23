@@ -7,7 +7,7 @@ import { DeleteBoardDocument } from "@/commons/graphql/graphql";
 import { ChangeEvent, useState } from "react";
 import _ from "lodash";
 
-export const BoardsList = ({ refetch }) => {
+export const BoardsList = ({ refetch, boardsCountRefetch }) => {
     const router = useRouter();
     const [deleteBoard] = useMutation(DeleteBoardDocument);
 
@@ -38,7 +38,8 @@ export const BoardsList = ({ refetch }) => {
     };
 
     const getDebounce = _.debounce((value, start, end) => {
-        refetch({ search: value, endDate: end, startDate: start, page: 1 });
+        refetch({ endDate: end, startDate: start, search: value, page: 1 });
+        boardsCountRefetch({ endDate: end, startDate: start, search: value });
         setKeyword(value);
     }, 500);
 
@@ -48,9 +49,11 @@ export const BoardsList = ({ refetch }) => {
 
     const onChangeDatePicker = (_, dateString) => {
         const [start, end] = dateString;
+        console.log(start, end);
         setStartDate(start);
         setEndDate(end);
-        refetch({ search: keyword, endDate: end, startDate: start, page: 1 });
+        refetch({ endDate: end, startDate: start, search: keyword, page: 1 });
+        boardsCountRefetch({ endDate: end, startDate: start, search: keyword });
     };
 
     return {

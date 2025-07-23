@@ -12,14 +12,19 @@ const Page = () => {
     // const { data, refetch } = useQuery(FetchBoardsDocument);
     const { data, refetch } = useQuery(FETCH_BOARDS);
 
-    const { data: boardsCount } = useQuery(FETCH_BOARDS_COUNT);
+    const { data: boardsCount, refetch: boardsCountRefetch } = useQuery(FETCH_BOARDS_COUNT);
 
     const lastPage = Math.ceil((boardsCount?.fetchBoardsCount ?? 10) / 10);
 
     return (
         <>
             <BannerPage />
-            <BoardsListPage data={data} refetch={refetch} lastPage={lastPage} />
+            <BoardsListPage
+                data={data}
+                refetch={refetch}
+                boardsCountRefetch={boardsCountRefetch}
+                lastPage={lastPage}
+            />
         </>
     );
 };
