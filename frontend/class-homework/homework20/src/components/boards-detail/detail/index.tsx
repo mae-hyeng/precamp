@@ -48,14 +48,19 @@ export const BoardsDetail = ({ data }: IBoardDetailProps) => {
                     </div>
                     <div className={styles.detail_main_wrapper}>
                         <div className={styles.img1}>
-                            <Image
-                                className={styles.detail1_img}
-                                src="/images/detail1.png"
-                                alt="디테일1"
-                                width={0}
-                                height={0}
-                                sizes="100vw"
-                            />
+                            {data?.fetchBoard.images.map((url, idx) =>
+                                url !== "/images/addImage.png" ? (
+                                    <Image
+                                        key={idx}
+                                        className={styles.detail1_img}
+                                        src={`https://storage.googleapis.com/${url}`}
+                                        alt="디테일"
+                                        width={0}
+                                        height={0}
+                                        sizes="100vw"
+                                    />
+                                ) : null
+                            )}
                         </div>
                         <div>{data?.fetchBoard?.contents}</div>
                         <div className={styles.youtube_wrapper}>

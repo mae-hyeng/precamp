@@ -2,20 +2,28 @@
 
 import { useMutation } from "@apollo/client";
 import { useParams, useRouter } from "next/navigation";
-import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, SetStateAction, useEffect, useRef, useState } from "react";
 import { IMyVariables } from "./types";
 import { FETCH_BOARD } from "@/commons/hooks/queries";
-// import { CreateBoardDocument, UpdateBoardDocument } from "@/commons/graphql/graphql";
-import { CREATE_BOARD, UPDATE_BOARD, UPLOAD_FILE } from "./queries";
 import { checkValidationFile } from "@/commons/libraries/validationFile";
+import {
+    CreateBoardDocument,
+    FetchBoardQuery,
+    UpdateBoardDocument,
+    UploadFileDocument,
+} from "@/commons/graphql/graphql";
 
-export const useBoardsWrite = (data) => {
+export const useBoardsWrite = (data: FetchBoardQuery) => {
     useEffect(() => {
         if (data?.fetchBoard?.boardAddress) {
             setZipcode(data.fetchBoard.boardAddress.zipcode ?? "");
             setAddress(data.fetchBoard.boardAddress.address ?? "");
             setAddressDetail(data.fetchBoard.boardAddress.addressDetail ?? "");
             setYoutubeUrl(data.fetchBoard.youtubeUrl ?? "");
+        }
+
+        if (data?.fetchBoard?.images) {
+            setImageUrls(data.fetchBoard.images);
         }
     }, [data]);
 
@@ -31,8 +39,8 @@ export const useBoardsWrite = (data) => {
 
     const [youtubeUrl, setYoutubeUrl] = useState("");
 
-    const [createBoard] = useMutation(CREATE_BOARD);
-    const [updateBoard] = useMutation(UPDATE_BOARD);
+    const [createBoard] = useMutation(CreateBoardDocument);
+    const [updateBoard] = useMutation(UpdateBoardDocument);
 
     const router = useRouter();
     const params = useParams();
@@ -42,7 +50,7 @@ export const useBoardsWrite = (data) => {
 
     const [imageUrls, setImageUrls] = useState(["", "", ""]);
 
-    const [uploadFile] = useMutation(UPLOAD_FILE);
+    const [uploadFile] = useMutation(UploadFileDocument);
 
     const onChangeInput = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -141,7 +149,10 @@ export const useBoardsWrite = (data) => {
         setIsOpen(false);
     };
 
-    const handleComplete = (data) => {
+    const handleComplete = (data: {
+        zonecode: SetStateAction<string>;
+        address: SetStateAction<string>;
+    }) => {
         setIsOpen(false);
         console.log(data);
         setZipcode(data.zonecode);
@@ -149,11 +160,11 @@ export const useBoardsWrite = (data) => {
         setAddressDetail("");
     };
 
-    const onClickImage = (idx) => {
+    const onClickImage = (idx: string | number) => {
         imageRefs.current[idx]?.click();
     };
 
-    const onChangeImage = async (e, idx) => {
+    const onChangeImage = async (e: ChangeEvent<HTMLInputElement>, idx: number) => {
         const file = e.target.files[0];
 
         const isValid = checkValidationFile(file);
@@ -165,6 +176,14 @@ export const useBoardsWrite = (data) => {
         setImageUrls((prev) => {
             const newUrls = [...prev];
             newUrls[idx] = url;
+            return newUrls;
+        });
+    };
+
+    const onDeleteImage = (idx: number) => {
+        setImageUrls((prev) => {
+            const newUrls = [...prev];
+            newUrls[idx] = "/images/addImage.png";
             return newUrls;
         });
     };
@@ -186,5 +205,6 @@ export const useBoardsWrite = (data) => {
         handleComplete,
         onClickImage,
         onChangeImage,
+        onDeleteImage,
     };
 };

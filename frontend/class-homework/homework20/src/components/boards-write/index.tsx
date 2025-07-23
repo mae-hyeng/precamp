@@ -6,7 +6,6 @@ import { useBoardsWrite } from "./hook";
 import { IBoardWriteProps } from "./types";
 import { Modal } from "antd";
 import { DaumPostcodeEmbed } from "react-daum-postcode";
-import { BoardWriteImage } from "./boards-write-image";
 
 export const BoardsWrite = ({ isEdit, data }: IBoardWriteProps) => {
     const {
@@ -26,6 +25,7 @@ export const BoardsWrite = ({ isEdit, data }: IBoardWriteProps) => {
         handleComplete,
         onClickImage,
         onChangeImage,
+        onDeleteImage,
     } = useBoardsWrite(data);
 
     return (
@@ -127,14 +127,16 @@ export const BoardsWrite = ({ isEdit, data }: IBoardWriteProps) => {
                         {Array(3)
                             .fill(0)
                             .map((_, idx) => (
-                                <div key={idx}>
+                                <div key={idx} className={styles.img_position}>
                                     <Image
                                         src={
-                                            data?.fetchBoard.images[idx]
-                                                ? `https://storage.googleapis.com/${data?.fetchBoard.images[idx]}`
-                                                : imageUrls[idx]
-                                                ? `https://storage.googleapis.com/${imageUrls[idx]}`
-                                                : "/images/addImage.png"
+                                            imageUrls[idx]
+                                                ? imageUrls[idx].startsWith("codecamp")
+                                                    ? `https://storage.googleapis.com/${imageUrls[idx]}`
+                                                    : `/images/addImage.png`
+                                                : data?.fetchBoard.images?.[idx]
+                                                ? `https://storage.googleapis.com/${data.fetchBoard.images[idx]}`
+                                                : `/images/addImage.png`
                                         }
                                         alt={`이미지추가버튼${idx + 1}`}
                                         width={300}
@@ -145,8 +147,16 @@ export const BoardsWrite = ({ isEdit, data }: IBoardWriteProps) => {
                                         type="file"
                                         className={styles.image_input}
                                         onChange={(e) => onChangeImage(e, idx)}
-                                        ref={(el) => (imageRefs.current[idx] = el)}
+                                        ref={(el) => {
+                                            imageRefs.current[idx] = el;
+                                        }}
                                     />
+                                    <button
+                                        onClick={() => onDeleteImage(idx)}
+                                        className={styles.image_delete}
+                                    >
+                                        X
+                                    </button>
                                 </div>
                             ))}
                         {/* <BoardWriteImage /> */}
