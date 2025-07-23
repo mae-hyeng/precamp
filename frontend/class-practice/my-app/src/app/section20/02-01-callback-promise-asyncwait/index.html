@@ -1,0 +1,106 @@
+<!-- 
+ `http://numbersapi.com/random?min-1&max=200`
+`https://api.isevenapi.xyz/api/iseven`
+`https://api.artic.edu/api/v1/artworks/10000`
+ -->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>callback promise async await</title>
+        <script>
+            // function addEventListener (aaa, bbb) {
+            //     셋팅된 API 주소로 요청이 끝났다고 가정
+            //     const res = 70; 셋팅된 API 주소에서 받아온 결과
+            //     bbb(res);
+            // }
+            const onClickCallback = () => {
+                const aa = new XMLHttpRequest();
+                aa.open("GET", "http://numbersapi.com/random?min=10000&max=20000");
+                aa.send();
+                aa.addEventListener("load", (res) => {
+                    console.log(res); // API 요청 결과
+                    const randomNum = Number(res.target.response.split(" ")[0]);
+
+                    const bb = new XMLHttpRequest();
+                    bb.open("GET", `https://api.isevenapi.xyz/api/iseven/${randomNum}/`);
+                    bb.send();
+                    bb.addEventListener("load", (res) => {
+                        console.log(res);
+                        const isTrue = JSON.parse(res.target.response).ad;
+                        console.log("isTrue ? ", isTrue);
+
+                        const cc = new XMLHttpRequest();
+                        cc.open("GET", `https://api.artic.edu/api/v1/artworks/${10000}`);
+                        cc.send();
+                        cc.addEventListener("load", (res) => {
+                            console.log(res.target.response);
+                        });
+                    });
+                });
+            };
+
+            const onClickPromise = () => {
+                // fetch().then() == new Promise.then();
+                // fetch("http://numbersapi.com/random?min=10000&max=20000").then((res) => {
+                //     res.text().then((res) => {
+                //         const randomNum = Number(res.split(" ")[0]);
+
+                //         fetch(`https://api.isevenapi.xyz/api/iseven/${randomNum}/`).then((res) => {
+                //             res.json().then((res) => {
+                //                 const isTrue = res.ad;
+                //                 console.log("2. Promise isTrue", isTrue);
+
+                //                 fetch(`https://api.artic.edu/api/v1/artworks/${randomNum}`).then((res) => {
+                //                     res.json().then((res) => {
+                //                         console.log(res);
+                //                     });
+                //                 });
+                //             });
+                //         });
+                //     });
+                // });
+                fetch("http://numbersapi.com/random?min=10000&max=20000")
+                    .then((res) => res.text())
+                    .then((qqq) => {
+                        const randomNum = Number(qqq.split(" ")[0]);
+                        return fetch(`https://api.isevenapi.xyz/api/iseven/${randomNum}/`);
+                    })
+                    .then((res) => res.json())
+                    .then((qqq) => {
+                        const isTrue = qqq.ad;
+                        console.log("2. Promise isTrue", isTrue);
+
+                        return fetch(`https://api.artic.edu/api/v1/artworks/${10000}`);
+                    })
+                    .then((res) => res.json())
+                    .then((qqq) => {
+                        console.log(qqq);
+                    });
+            };
+
+            // fetch, axios 등 => Promise를 지원하는 대표적인 기능
+            // fetch, axios 등을 기다리는 2가지 방법
+            // 1. .then()을 활용
+            // 2. await 활용 => 주의) await는 아무데나 붙인다고 뒤에껄 기다리는게 아님
+            const onClickAsyncAwait = async () => {
+                const res1 = await fetch("http://numbersapi.com/random?min=10000&max=20000");
+                const qqq1 = await res1.text();
+                const randomNum = Number(qqq1.split(" ")[0]);
+
+                const res2 = await fetch(`https://api.isevenapi.xyz/api/iseven/${randomNum}/`);
+                const qqq2 = await res2.json();
+                const isTrue = qqq2.ad;
+
+                const res3 = await fetch(`https://api.artic.edu/api/v1/artworks/${10000}`);
+                const qqq3 = await res3.json();
+                console.log(qqq3);
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="onClickCallback()">Callback 연습</button>
+        <button onclick="onClickPromise()">Promise 연습</button>
+        <button onclick="onClickAsyncAwait()">AsyncAwait 연습</button>
+    </body>
+</html>
