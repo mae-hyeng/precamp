@@ -1,6 +1,6 @@
 import { IPaginationProps } from "./../pagination/types";
-import { FetchBoardQuery } from "@/commons/graphql/graphql";
+import { FetchBoardsQuery } from "@/commons/graphql/graphql";
 
 export type IBoardListProps = {
-    data?: FetchBoardQuery;
+    data?: FetchBoardsQuery;
 } & IPaginationProps;

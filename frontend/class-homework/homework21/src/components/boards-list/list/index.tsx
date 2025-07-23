@@ -5,9 +5,17 @@ import styles from "./styles.module.css";
 import { BoardsList } from "./hook";
 import { IBoardListProps } from "./types";
 import { Pagination } from "../pagination";
+import { BoardSearchPage } from "../search";
 
 export const BoardsListPage = ({ data, refetch, lastPage }: IBoardListProps) => {
-    const { onClickBoard, onClickDeleteBoard, onClickRegister } = BoardsList();
+    const {
+        keyword,
+        onClickBoard,
+        onClickDeleteBoard,
+        onClickRegister,
+        onChangeKeyword,
+        onChangeDatePicker,
+    } = BoardsList({ refetch });
     return (
         <>
             <div className={styles.Page}>
@@ -58,15 +66,10 @@ export const BoardsListPage = ({ data, refetch, lastPage }: IBoardListProps) => 
                 <h1>트립토크 게시판</h1>
                 <div className={styles.tripTalk_boards}>
                     <div className={styles.boards_func_wrapper}>
-                        <div className={styles.boards_func}>
-                            <input className={styles.date_input} type="date" required />
-                            <input
-                                className={styles.text_input}
-                                placeholder="제목을 검색해 주세요."
-                                type="text"
-                            />
-                            <button className={styles.search_btn}>검색</button>
-                        </div>
+                        <BoardSearchPage
+                            onChangeKeyword={onChangeKeyword}
+                            onChangeDatePicker={onChangeDatePicker}
+                        />
                         <div>
                             <button onClick={onClickRegister} className={styles.submit_btn}>
                                 트립토크 등록
@@ -90,7 +93,24 @@ export const BoardsListPage = ({ data, refetch, lastPage }: IBoardListProps) => 
                                             onClick={() => onClickBoard(d._id)}
                                             className={styles.board_title}
                                         >
-                                            {d.title}
+                                            {d.title
+                                                .replaceAll(
+                                                    keyword,
+                                                    `[keywordTitle]${keyword}[keywordTitle]`
+                                                )
+                                                .split("[keywordTitle]")
+                                                .map((el, idx) => (
+                                                    <span
+                                                        key={`${el}_${idx}`}
+                                                        className={
+                                                            el === keyword
+                                                                ? styles.search_keyword
+                                                                : ""
+                                                        }
+                                                    >
+                                                        {el}
+                                                    </span>
+                                                ))}
                                         </div>
                                         <div className={styles.board_writer}>{d.writer}</div>
                                         <div className={styles.board_redDate}>
@@ -101,7 +121,7 @@ export const BoardsListPage = ({ data, refetch, lastPage }: IBoardListProps) => 
                                         </div>
                                         <div className={styles.delete_wrapper}>
                                             <Image
-                                                id={idx + 1}
+                                                id={String(idx + 1)}
                                                 className={styles.board_delete}
                                                 onClick={() => onClickDeleteBoard(d._id)}
                                                 src="/images/delete.png"
