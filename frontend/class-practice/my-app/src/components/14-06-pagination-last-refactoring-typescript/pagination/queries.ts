@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
 
 export const FETCH_BOARDS = gql`
-    query fetchBoards($page: Int) {
+    query fetchBoardsPaginationLastRefactoringTypeScript($page: Int) {
         fetchBoards(page: $page) {
             _id
             writer

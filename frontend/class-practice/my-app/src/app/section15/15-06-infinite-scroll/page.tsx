@@ -5,7 +5,7 @@ import { useState } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const FETCH_BOARDS = gql`
-    query fetchBoards($page: Int) {
+    query fetchBoards1506($page: Int) {
         fetchBoards(page: $page) {
             _id
             writer
