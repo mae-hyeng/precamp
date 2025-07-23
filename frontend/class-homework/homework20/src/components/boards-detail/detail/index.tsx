@@ -44,7 +44,7 @@ export const BoardsDetail = ({ data }: IBoardDetailProps) => {
                 <div className={styles.divideLine}></div>
                 <div className={styles.detail_main}>
                     <div className={styles.detail_main_loc}>
-                        <button>{data?.fetchBoard.boardAddress.address}</button>
+                        <button>{data?.fetchBoard?.boardAddress?.address}</button>
                     </div>
                     <div className={styles.detail_main_wrapper}>
                         <div className={styles.img1}>
