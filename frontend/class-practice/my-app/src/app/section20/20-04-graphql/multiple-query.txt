@@ -1,0 +1,14 @@
+query {
+  fetchBoardsCount
+  
+  fetchBoardsOfTheBest {
+    _id
+    title
+  }
+  
+  fetchBoards {
+    _id
+    title
+    writer
+  }
+}

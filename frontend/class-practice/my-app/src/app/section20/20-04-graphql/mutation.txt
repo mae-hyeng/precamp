@@ -1,0 +1,3 @@
+{
+    "query": "mutation { createBoard(createBoardInput: { writer: \"짱구\", password: \"1234\", title: \"못말립니다\", contents: \"짱구는 못말려\" }) { _id }}"
+}
