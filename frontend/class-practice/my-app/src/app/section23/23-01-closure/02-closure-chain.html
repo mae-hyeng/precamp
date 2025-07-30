@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>클로저 실습</title>
+        <!-- 개발자도구에서 브레이크 포인트 찍고 함수 하나하나 타보면서 scope(범위) 부분 확인, closure(닫기) 부분 확인 -->
+        <script>
+            function aaa() {
+                const apple = 10;
+
+                function bbb() {
+                    const banana = 20;
+                    console.log(banana);
+                    console.log(apple);
+                    console.log(qqq);
+
+                    function ccc() {
+                        const tomato = 30;
+                        console.log(tomato);
+                        console.log(banana);
+                        console.log(apple);
+                        console.log(qqq);
+                    }
+
+                    ccc();
+                }
+
+                const qqq = 3;
+
+                bbb();
+            }
+
+            aaa();
+        </script>
+    </head>
+    <body></body>
+</html>
