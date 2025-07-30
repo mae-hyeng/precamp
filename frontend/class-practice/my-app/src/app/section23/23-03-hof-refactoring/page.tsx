@@ -4,7 +4,7 @@ import { gql, useQuery } from "@apollo/client";
 import { MouseEvent } from "react";
 
 const FETCH_BOARDS = gql`
-    query fetchBoards1401($page: Int) {
+    query fetchBoards2303($page: Int) {
         fetchBoards(page: $page) {
             _id
             writer

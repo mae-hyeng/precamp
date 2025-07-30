@@ -14,7 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 type Documents = {
-    "\n    query fetchBoards1401($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoards1401Document,
+    "\n    query fetchBoards1401Pagination($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoards1401PaginationDocument,
     "\n    query fetchBoards1402($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoards1402Document,
     "\n    query fetchBoards1403($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoards1403Document,
     "\n    query fetchBoardsCount {\n        fetchBoardsCount\n    }\n": typeof types.FetchBoardsCountDocument,
@@ -27,12 +27,18 @@ type Documents = {
     "\n    query fetchBoards1901($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoards1901Document,
     "\n    query fetchBoardsSearchWithDebouncing($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoardsSearchWithDebouncingDocument,
     "\n    query fetchBoardsSearchWithDebouncingKeyword($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoardsSearchWithDebouncingKeywordDocument,
-    "\n    query fetchBoardsWithSearches($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoardsWithSearchesDocument,
+    "\n    query fetchBoards2101 {\n        fetchBoards {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoards2101Document,
+    "\n    query fetchBoards2101_2 {\n        fetchBoards {\n            _id\n            writer\n        }\n    }\n": typeof types.FetchBoards2101_2Document,
+    "\n    query fetchBoards2102 {\n        fetchBoards {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoards2102Document,
+    "\n    query fetchUserLoggedIn {\n        fetchUserLoggedIn {\n            _id\n            email\n            name\n        }\n    }\n": typeof types.FetchUserLoggedInDocument,
+    "\n    mutation loginUser($email: String!, $password: String!) {\n        loginUser(email: $email, password: $password) {\n            accessToken\n        }\n    }\n": typeof types.LoginUserDocument,
+    "\n    query fetchBoards2303($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoards2303Document,
     "\n    query fetchBoardsPaginationLastRefactoring($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoardsPaginationLastRefactoringDocument,
     "\n    query fetchBoardsPaginationLastRefactoringTypeScript($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": typeof types.FetchBoardsPaginationLastRefactoringTypeScriptDocument,
+    "\n    query fetchBoards2101_3 {\n        fetchBoards {\n            _id\n            writer\n            title\n        }\n    }\n": typeof types.FetchBoards2101_3Document,
 };
 const documents: Documents = {
-    "\n    query fetchBoards1401($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoards1401Document,
+    "\n    query fetchBoards1401Pagination($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoards1401PaginationDocument,
     "\n    query fetchBoards1402($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoards1402Document,
     "\n    query fetchBoards1403($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoards1403Document,
     "\n    query fetchBoardsCount {\n        fetchBoardsCount\n    }\n": types.FetchBoardsCountDocument,
@@ -45,9 +51,15 @@ const documents: Documents = {
     "\n    query fetchBoards1901($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoards1901Document,
     "\n    query fetchBoardsSearchWithDebouncing($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoardsSearchWithDebouncingDocument,
     "\n    query fetchBoardsSearchWithDebouncingKeyword($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoardsSearchWithDebouncingKeywordDocument,
-    "\n    query fetchBoardsWithSearches($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoardsWithSearchesDocument,
+    "\n    query fetchBoards2101 {\n        fetchBoards {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoards2101Document,
+    "\n    query fetchBoards2101_2 {\n        fetchBoards {\n            _id\n            writer\n        }\n    }\n": types.FetchBoards2101_2Document,
+    "\n    query fetchBoards2102 {\n        fetchBoards {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoards2102Document,
+    "\n    query fetchUserLoggedIn {\n        fetchUserLoggedIn {\n            _id\n            email\n            name\n        }\n    }\n": types.FetchUserLoggedInDocument,
+    "\n    mutation loginUser($email: String!, $password: String!) {\n        loginUser(email: $email, password: $password) {\n            accessToken\n        }\n    }\n": types.LoginUserDocument,
+    "\n    query fetchBoards2303($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoards2303Document,
     "\n    query fetchBoardsPaginationLastRefactoring($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoardsPaginationLastRefactoringDocument,
     "\n    query fetchBoardsPaginationLastRefactoringTypeScript($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n": types.FetchBoardsPaginationLastRefactoringTypeScriptDocument,
+    "\n    query fetchBoards2101_3 {\n        fetchBoards {\n            _id\n            writer\n            title\n        }\n    }\n": types.FetchBoards2101_3Document,
 };
 
 /**
@@ -67,7 +79,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query fetchBoards1401($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"): (typeof documents)["\n    query fetchBoards1401($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"];
+export function graphql(source: "\n    query fetchBoards1401Pagination($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"): (typeof documents)["\n    query fetchBoards1401Pagination($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -119,7 +131,27 @@ export function graphql(source: "\n    query fetchBoardsSearchWithDebouncingKeyw
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query fetchBoardsWithSearches($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"): (typeof documents)["\n    query fetchBoardsWithSearches($page: Int, $search: String) {\n        fetchBoards(page: $page, search: $search) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"];
+export function graphql(source: "\n    query fetchBoards2101 {\n        fetchBoards {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"): (typeof documents)["\n    query fetchBoards2101 {\n        fetchBoards {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    query fetchBoards2101_2 {\n        fetchBoards {\n            _id\n            writer\n        }\n    }\n"): (typeof documents)["\n    query fetchBoards2101_2 {\n        fetchBoards {\n            _id\n            writer\n        }\n    }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    query fetchBoards2102 {\n        fetchBoards {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"): (typeof documents)["\n    query fetchBoards2102 {\n        fetchBoards {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    query fetchUserLoggedIn {\n        fetchUserLoggedIn {\n            _id\n            email\n            name\n        }\n    }\n"): (typeof documents)["\n    query fetchUserLoggedIn {\n        fetchUserLoggedIn {\n            _id\n            email\n            name\n        }\n    }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    mutation loginUser($email: String!, $password: String!) {\n        loginUser(email: $email, password: $password) {\n            accessToken\n        }\n    }\n"): (typeof documents)["\n    mutation loginUser($email: String!, $password: String!) {\n        loginUser(email: $email, password: $password) {\n            accessToken\n        }\n    }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    query fetchBoards2303($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"): (typeof documents)["\n    query fetchBoards2303($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -128,6 +160,10 @@ export function graphql(source: "\n    query fetchBoardsPaginationLastRefactorin
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "\n    query fetchBoardsPaginationLastRefactoringTypeScript($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"): (typeof documents)["\n    query fetchBoardsPaginationLastRefactoringTypeScript($page: Int) {\n        fetchBoards(page: $page) {\n            _id\n            writer\n            title\n            contents\n        }\n    }\n"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "\n    query fetchBoards2101_3 {\n        fetchBoards {\n            _id\n            writer\n            title\n        }\n    }\n"): (typeof documents)["\n    query fetchBoards2101_3 {\n        fetchBoards {\n            _id\n            writer\n            title\n        }\n    }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

@@ -3,7 +3,7 @@
 import { gql, useMutation, useQuery } from "@apollo/client";
 
 const FETCH_BOARDS = gql`
-    query fetchBoards1401 {
+    query fetchBoards2102 {
         fetchBoards {
             _id
             writer
