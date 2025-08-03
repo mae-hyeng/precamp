@@ -1,6 +1,6 @@
 {
-    "name": "mae-hyeng-ui",
-    "version": "1.0.1",
+    "name": "@maehyeng/ui",
+    "version": "1.1.2",
     "private": false,
     "main": "./src/index.ts",
     "scripts": {
