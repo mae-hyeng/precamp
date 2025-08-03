@@ -13,6 +13,7 @@
         "@ant-design/icons": "5.x",
         "@apollo/client": "^3.13.8",
         "@hookform/resolvers": "^5.2.1",
+        "@maehyeng/ui": "^1.1.2",
         "antd": "^5.26.4",
         "apollo-upload-client": "^18.0.1",
         "codecamp-ui": "^1.0.0",

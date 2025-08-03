@@ -5,7 +5,6 @@
 /.pnp
 .pnp.js
 .yarn/install-state.gz
-/../npm-token.txt
 
 # testing
 /coverage

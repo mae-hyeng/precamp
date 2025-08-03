@@ -2,7 +2,9 @@
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ISchema, schema } from "./schema";
-import { InputSoftSFull, ButtonSoftMFull } from "codecamp-ui";
+// import { InputSoftSFull, ButtonSoftMFull } from "codecamp-ui";
+// import { InputSoftSFull, ButtonSoftMFull } from "mae-hyeng-ui";
+import { ButtonSoftMFull, InputSoftSFull } from "@maehyeng/ui";
 
 export default function GraphqlMutationPage() {
     const methods = useForm<ISchema>({
