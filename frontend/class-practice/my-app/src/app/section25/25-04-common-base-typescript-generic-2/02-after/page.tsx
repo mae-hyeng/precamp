@@ -1,0 +1,65 @@
+"use client";
+import { useMutation, gql } from "@apollo/client";
+import { useForm, FormProvider } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ISchema, schema } from "./schema";
+import { InputSoftSFull } from "@/commons/ui/25-04-input-base-typescript-generic-2";
+import { ButtonSoftMFull } from "@/commons/ui/25-04-button-base-typescript-generic-2";
+
+// const myGraphqlSetting = gql`
+//     # mutation createBoard0604($myWriter: String, $myTitle: String, $myContent: String) {
+//     #     createBoard(writer: $myWriter, title: $myTitle, contents: $myContent) {
+//     #         _id
+//     #         number
+//     #         message
+//     #     }
+//     # }
+// `;
+
+export default function GraphqlMutationPage() {
+    const methods = useForm<ISchema>({
+        resolver: zodResolver(schema),
+        mode: "onChange",
+    });
+    // const [myFunc] = useMutation(myGraphqlSetting);
+
+    const onClickSubmit = async (data: ISchema) => {
+        console.log(data);
+        // 그래프큐엘 요청
+        // const result = await myFunc({
+        //     variables: {
+        //         // variables => 이게 $역할을 함
+        //         myWriter: data.writer,
+        //         myTitle: data.title,
+        //         myContent: data.contents,
+        //     },
+        // });
+        // console.log(result);
+    };
+
+    console.log("리렌더링이 되나?");
+
+    return (
+        <FormProvider {...methods}>
+            <form onSubmit={methods.handleSubmit(onClickSubmit)}>
+                {/* 제목(함수) : {InputSoftSFull<ISchema>({ type: "text", keyname: "title" })} */}
+                제목(컴포넌트) : <InputSoftSFull<ISchema> type="text" keyname="title" />
+                <div style={{ color: "red" }}>{methods.formState.errors.title?.message}</div>
+                <br />
+                {/* 내용(함수) : {InputSoftSFull<ISchema>({ type: "text", keyname: "contents" })} */}
+                내용(컴포넌트) : <InputSoftSFull<ISchema> type="text" keyname="contents" />
+                <div style={{ color: "red" }}>{methods.formState.errors.contents?.message}</div>
+                <br />
+                <ButtonSoftMFull<ISchema>>GRAPHQL-API 요청하기</ButtonSoftMFull>
+            </form>
+        </FormProvider>
+    );
+}
+
+/* 
+<form>
+    <button type"button"></button>  // 내가 onClick 추가하고 싶을 때
+    <button type"reset"></button>   // 폼 안에 있는 인풋들 초기화 하고 싶을 때
+    <button type"submit"></button>  // 폼 등록/수정 등 하고 싶을 때 => 이게 디폴트 값
+</form>
+*/
