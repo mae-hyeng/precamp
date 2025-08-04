@@ -19,6 +19,7 @@
         "codecamp-ui": "^1.0.0",
         "firebase": "^12.0.0",
         "graphql": "^16.11.0",
+        "graphql-request": "^7.2.0",
         "lodash": "^4.17.21",
         "mae-hyeng-ui": "^1.0.1",
         "next": "14.2.30",
@@ -28,6 +29,7 @@
         "react-hook-form": "^7.61.1",
         "react-infinite-scroll-component": "^6.1.0",
         "swiper": "^11.2.10",
+        "zen-observable": "^0.10.0",
         "zod": "^4.0.13",
         "zustand": "^5.0.6"
     },
@@ -38,6 +40,7 @@
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
+        "@types/zen-observable": "^0.8.7",
         "eslint": "^8",
         "eslint-config-next": "14.2.30",
         "postcss": "^8",
