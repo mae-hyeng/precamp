@@ -14,6 +14,7 @@
         "@apollo/client": "^3.13.8",
         "@hookform/resolvers": "^5.2.1",
         "@maehyeng/ui": "^1.1.2",
+        "@portone/browser-sdk": "^0.0.24",
         "antd": "^5.26.4",
         "apollo-upload-client": "^18.0.1",
         "codecamp-ui": "^1.0.0",
@@ -29,6 +30,7 @@
         "react-hook-form": "^7.61.1",
         "react-infinite-scroll-component": "^6.1.0",
         "swiper": "^11.2.10",
+        "uuid": "^11.1.0",
         "zen-observable": "^0.10.0",
         "zod": "^4.0.13",
         "zustand": "^5.0.6"
