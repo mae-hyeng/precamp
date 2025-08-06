@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Document</title>
+        <script>
+            const onClickButton = () => {
+                console.log("시작");
+
+                // 매크로큐에 들어감
+                setTimeout(() => {
+                    new Promise((resolve) => resolve("짱구")).then(() => {
+                        console.log("i'm Promise(setTimeout 내부에서 실행)");
+                    });
+                    console.log("i'm setTimeout, 매크로큐, 0초 뒤에 실행");
+                }, 0);
+
+                // 마이크로큐에 들어감
+                new Promise((resolve) => resolve("짱구")).then(() => {
+                    console.log("i'm Promise(1), 마이크로큐");
+                });
+
+                // 매크로큐에 들어감
+                setInterval(() => {
+                    console.log("i'm setInterval, 매크로큐, 0초마다 실행됨");
+                }, 0);
+
+                let sum = 0;
+                for (let i = 0; i < 9000000000; i++) {
+                    sum++;
+                }
+
+                // 마이크로큐에 들어감
+                new Promise((resolve) => resolve("짱구")).then(() => {
+                    console.log("i'm Promise(2), 마이크로큐");
+                });
+
+                console.log("끝");
+            };
+        </script>
+    </head>
+    <body>
+        <button onclick="onClickButton()">클릭</button>
+    </body>
+</html>
