@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>reflow/repaint 실습</title>
+        <style>
+            .box1 {
+                width: 100px;
+                height: 100px;
+                background-color: skyblue;
+
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+
+            .box1:hover {
+                left: 20px;
+            }
+
+            .box2 {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+
+                will-change: transform;
+            }
+
+            .box2:hover {
+                transform: translateX(20px);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box1">reflow 이동 연습(ex, 토글 등)</div>
+        <div class="box2">repaint 이동 실습(ex, 토글 등)</div>
+    </body>
+</html>
